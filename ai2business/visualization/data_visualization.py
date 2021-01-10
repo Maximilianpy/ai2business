@@ -839,7 +839,7 @@ class DataVisualization:
             >>> data.lineplot()
             >>> builder.data_figure.save_all_figures(folder=folder)
             ```
-            ![Placeholder](https://github.com/AI2Business/ai2business/blob/main/docs/images/appearance/get_lineplot_d1f5c1875c5fac03668674031f8af390.png?raw=true){: loading=lazy }
+            ![Placeholder](https://github.com/AI2Business/ai2business/blob/main/docs/images/plottypes/get_lineplot_d1f5c1875c5fac03668674031f8af390.png?raw=true){: loading=lazy }
         """
         self.initialization_figure
         self.builder.get_lineplot(**kwargs)
@@ -871,7 +871,7 @@ class DataVisualization:
             >>> data.scatterplot()
             >>> builder.data_figure.save_all_figures(folder=folder)
             ```
-            ![Placeholder](https://github.com/AI2Business/ai2business/blob/main/docs/images/appearance/get_scatterplot_b14dfb01022e343d587d4ba4b39ee56c.png?raw=true){: loading=lazy }
+            ![Placeholder](https://github.com/AI2Business/ai2business/blob/main/docs/images/plottypes/get_scatterplot_b14dfb01022e343d587d4ba4b39ee56c.png?raw=true){: loading=lazy }
         """
         self.initialization_figure
         self.builder.get_scatterplot(**kwargs)
@@ -887,7 +887,7 @@ class DataVisualization:
             >>> data.swarmplot()
             >>> builder.data_figure.save_all_figures(folder=folder)
             ```
-            ![Placeholder](https://github.com/AI2Business/ai2business/blob/main/docs/images/appearance/get_swarmplot_fa34ed63066eb6800f6e4300d3787da2.png?raw=true){: loading=lazy }
+            ![Placeholder](https://github.com/AI2Business/ai2business/blob/main/docs/images/plottypes/get_swarmplot_fa34ed63066eb6800f6e4300d3787da2.png?raw=true){: loading=lazy }
         """
         self.initialization_figure
         self.builder.get_swarmplot(**kwargs)
@@ -903,7 +903,7 @@ class DataVisualization:
             >>> data.distributionplot()
             >>> builder.data_figure.save_all_figures(folder=folder)
             ```
-            ![Placeholder](https://github.com/AI2Business/ai2business/blob/main/docs/images/appearance/get_distributionplot_68a2aea492d392e6f1b81420cfed43ef.png?raw=true){: loading=lazy }
+            ![Placeholder](https://github.com/AI2Business/ai2business/blob/main/docs/images/plottypes/get_distributionplot_68a2aea492d392e6f1b81420cfed43ef.png?raw=true){: loading=lazy }
         """
         self.builder.get_distributionplot(**kwargs)
 
@@ -918,7 +918,7 @@ class DataVisualization:
             >>> data.relationalplot()
             >>> builder.data_figure.save_all_figures(folder=folder)
             ```
-            ![Placeholder](https://github.com/AI2Business/ai2business/blob/main/docs/images/appearance/get_relationalplot_2ca3df8a2c1238c50f00e3822f3b94f1.png?raw=true){: loading=lazy }
+            ![Placeholder](https://github.com/AI2Business/ai2business/blob/main/docs/images/plottypes/get_relationalplot_2ca3df8a2c1238c50f00e3822f3b94f1.png?raw=true){: loading=lazy }
         """
         self.initialization_figure
         self.builder.get_relationalplot(**kwargs)
@@ -934,7 +934,7 @@ class DataVisualization:
             >>> data.categoryplot()
             >>> builder.data_figure.save_all_figures(folder=folder)
             ```
-            ![Placeholder](https://github.com/AI2Business/ai2business/blob/main/docs/images/appearance/get_categoryplot_3628ede87a6e217e30435bdcd9a9ce3b.png?raw=true){: loading=lazy }
+            ![Placeholder](https://github.com/AI2Business/ai2business/blob/main/docs/images/plottypes/get_categoryplot_3628ede87a6e217e30435bdcd9a9ce3b.png?raw=true){: loading=lazy }
         """
         self.initialization_figure
         self.builder.get_categoryplot(**kwargs)
@@ -951,10 +951,19 @@ class DataVisualization:
             >>> data = dav.DataVisualization()
             >>> builder = dav.DesignerDataVisualization(dataframe)
             >>> data.builder = builder
-            >>> data.boxplot()
+            >>> data.boxplot(multiboxen=False)
             >>> builder.data_figure.save_all_figures(folder=folder)
             ```
-            ![Placeholder](https://github.com/AI2Business/ai2business/blob/main/docs/images/appearance/get_boxplot_a0023f9b0bc21741142a69f40baf5c43.png?raw=true){: loading=lazy }
+            ![Placeholder](https://github.com/AI2Business/ai2business/blob/main/docs/images/plottypes/get_boxplot_a0023f9b0bc21741142a69f40baf5c43.png?raw=true){: loading=lazy }
+            ```python
+            >>> from ai2business.visualization import data_visualization as dav
+            >>> data = dav.DataVisualization()
+            >>> builder = dav.DesignerDataVisualization(dataframe)
+            >>> data.builder = builder
+            >>> data.boxplot(multiboxen=True)
+            >>> builder.data_figure.save_all_figures(folder=folder)
+            ![Placeholder](https://github.com/AI2Business/ai2business/blob/main/docs/images/plottypes/get_boxenplot_56ae2969afd82d78d7585b14e938df29.png?raw=true){: loading=lazy }
+            ```
         """
         self.initialization_figure
         if multiboxen:
@@ -973,7 +982,7 @@ class DataVisualization:
             >>> data.stripplot()
             >>> builder.data_figure.save_all_figures(folder=folder)
             ```
-            ![Placeholder](https://github.com/AI2Business/ai2business/blob/main/docs/images/appearance/get_stripplot_4ce7af555a14c09c6f48ab7b13990dd7.png?raw=true){: loading=lazy }
+            ![Placeholder](https://github.com/AI2Business/ai2business/blob/main/docs/images/plottypes/get_stripplot_4ce7af555a14c09c6f48ab7b13990dd7.png?raw=true){: loading=lazy }
         """
         self.initialization_figure
         self.builder.get_stripplot(**kwargs)
@@ -989,7 +998,7 @@ class DataVisualization:
             >>> data.hexagonalplot()
             >>> builder.data_figure.save_all_figures(folder=folder)
             ```
-            ![Placeholder](https://github.com/AI2Business/ai2business/blob/main/docs/images/appearance/get_hexagonplot_bee62ec100c2ea9dc2bc6e71d18cf3d6.png?raw=true){: loading=lazy }
+            ![Placeholder](https://github.com/AI2Business/ai2business/blob/main/docs/images/plottypes/get_hexagonplot_bee62ec100c2ea9dc2bc6e71d18cf3d6.png?raw=true){: loading=lazy }
         """
         self.initialization_figure
         self.builder.get_hexagonplot(**kwargs)
@@ -1021,7 +1030,7 @@ class DataVisualization:
             >>> data.violinplot()
             >>> builder.data_figure.save_all_figures(folder=folder)
             ```
-            ![Placeholder](https://github.com/AI2Business/ai2business/blob/main/docs/images/appearance/get_violinplot_9956ae30ad1f00a5b5869a4da95754d9.png?raw=true){: loading=lazy }
+            ![Placeholder](https://github.com/AI2Business/ai2business/blob/main/docs/images/plottypes/get_violinplot_9956ae30ad1f00a5b5869a4da95754d9.png?raw=true){: loading=lazy }
         """
         self.initialization_figure
         self.builder.get_violinplot(**kwargs)
@@ -1037,7 +1046,7 @@ class DataVisualization:
             >>> data.residualplot()
             >>> builder.data_figure.save_all_figures(folder=folder)
             ```
-            ![Placeholder](https://github.com/AI2Business/ai2business/blob/main/docs/images/appearance/get_violinplot_9956ae30ad1f00a5b5869a4da95754d9.png?raw=true){: loading=lazy }
+            ![Placeholder](https://github.com/AI2Business/ai2business/blob/main/docs/images/plottypes/get_violinplot_9956ae30ad1f00a5b5869a4da95754d9.png?raw=true){: loading=lazy }
         """
         self.initialization_figure
         self.builder.get_residualplot(**kwargs)
@@ -1057,7 +1066,7 @@ class DataVisualization:
             >>> data.regressionplot(map=False)
             >>> builder.data_figure.save_all_figures(folder=folder)
             ```
-            ![Placeholder](https://github.com/AI2Business/ai2business/blob/main/docs/images/appearance/get_regressionplot_a1987483cda51c9c884abd44b4def6ef.png?raw=true){: loading=lazy }
+            ![Placeholder](https://github.com/AI2Business/ai2business/blob/main/docs/images/plottypes/get_regressionplot_a1987483cda51c9c884abd44b4def6ef.png?raw=true){: loading=lazy }
             ```python
             >>> from ai2business.visualization import data_visualization as dav
             >>> data = dav.DataVisualization()
@@ -1066,7 +1075,7 @@ class DataVisualization:
             >>> data.regressionmapplot(map=True)
             >>> builder.data_figure.save_all_figures(folder=folder)
             ```
-            ![Placeholder](https://github.com/AI2Business/ai2business/blob/main/docs/images/appearance/get_density_mapplot_aa27faf44d09f3cf3e1ca549bfe12d1b.png?raw=true){: loading=lazy }
+            ![Placeholder](https://github.com/AI2Business/ai2business/blob/main/docs/images/plottypes/get_density_mapplot_aa27faf44d09f3cf3e1ca549bfe12d1b.png?raw=true){: loading=lazy }
 
         """
         self.initialization_figure
@@ -1090,7 +1099,7 @@ class DataVisualization:
             >>> data.kerneldensitymapplot(map=False)
             >>> builder.data_figure.save_all_figures(folder=folder)
             ```
-            ![Placeholder](https://github.com/AI2Business/ai2business/blob/main/docs/images/appearance/get_kerneldensity_mapplot_da7caa95343a14497e78afff0fb304fb.png?raw=true){: loading=lazy }
+            ![Placeholder](https://github.com/AI2Business/ai2business/blob/main/docs/images/plottypes/get_kerneldensity_mapplot_da7caa95343a14497e78afff0fb304fb.png?raw=true){: loading=lazy }
             ```python
             >>> from ai2business.visualization import data_visualization as dav
             >>> data = dav.DataVisualization()
@@ -1099,7 +1108,7 @@ class DataVisualization:
             >>> data.densitymapplot(map=True)
             >>> builder.data_figure.save_all_figures(folder=folder)
             ```
-            ![Placeholder](https://github.com/AI2Business/ai2business/blob/main/docs/images/appearance/get_density_mapplot_aa27faf44d09f3cf3e1ca549bfe12d1b.png?raw=true){: loading=lazy }
+            ![Placeholder](https://github.com/AI2Business/ai2business/blob/main/docs/images/plottypes/get_density_mapplot_aa27faf44d09f3cf3e1ca549bfe12d1b.png?raw=true){: loading=lazy }
         """
         self.initialization_figure
 
@@ -1126,7 +1135,7 @@ class DataVisualization:
             >>> data.clustermapplot()
             >>> builder.data_figure.save_all_figures(folder=folder)
             ```
-            ![Placeholder](https://github.com/AI2Business/ai2business/blob/main/docs/images/appearance/get_cluster_mapplot_212509d11bc11b8d2de8e09a98760a5a.png?raw=true){: loading=lazy }
+            ![Placeholder](https://github.com/AI2Business/ai2business/blob/main/docs/images/plottypes/get_cluster_mapplot_212509d11bc11b8d2de8e09a98760a5a.png?raw=true){: loading=lazy }
         """
         self.initialization_figure
         self.builder.get_cluster_mapplot(
@@ -1144,7 +1153,7 @@ class DataVisualization:
             >>> data.heatmapplot()
             >>> builder.data_figure.save_all_figures(folder=folder)
             ```
-            ![Placeholder](https://github.com/AI2Business/ai2business/blob/main/docs/images/appearance/get_heat_mapplot_6efd63f601845f3b57c63a82a360464d.png?raw=true){: loading=lazy }
+            ![Placeholder](https://github.com/AI2Business/ai2business/blob/main/docs/images/plottypes/get_heat_mapplot_6efd63f601845f3b57c63a82a360464d.png?raw=true){: loading=lazy }
         """
         self.initialization_figure
         self.builder.get_heat_mapplot(**kwargs)
@@ -1172,7 +1181,7 @@ class DataVisualization:
             >>> data.diagonalcorrelationplot(map=False)
             >>> builder.data_figure.save_all_figures(folder=folder)
             ```
-            ![Placeholder](https://github.com/AI2Business/ai2business/blob/main/docs/images/appearance/get_diagonal_correlationplot_edcbab55666e77860eebdc5b73d45b6d.png?raw=true){: loading=lazy }
+            ![Placeholder](https://github.com/AI2Business/ai2business/blob/main/docs/images/plottypes/get_diagonal_correlationplot_edcbab55666e77860eebdc5b73d45b6d.png?raw=true){: loading=lazy }
             ```python
             >>> from ai2business.visualization import data_visualization as dav
             >>> data = dav.DataVisualization()
@@ -1181,7 +1190,7 @@ class DataVisualization:
             >>> data.correlationplot(map=True)
             >>> builder.data_figure.save_all_figures(folder=folder)
             ```
-            ![Placeholder](https://github.com/AI2Business/ai2business/blob/main/docs/images/appearance/get_correlationplot_227d61e793e336cf86e41ec7b6ec33d6.png?raw=true){: loading=lazy }
+            ![Placeholder](https://github.com/AI2Business/ai2business/blob/main/docs/images/plottypes/get_correlationplot_227d61e793e336cf86e41ec7b6ec33d6.png?raw=true){: loading=lazy }
         """
         self.initialization_figure
         if diagonal:
@@ -1208,7 +1217,7 @@ class DataVisualization:
             >>> data.complexpairmapplot(map=False)
             >>> builder.data_figure.save_all_figures(folder=folder)
             ```
-            ![Placeholder](https://github.com/AI2Business/ai2business/blob/main/docs/images/appearance/get_complex_pairmapplot_fb3ba50582340191e6f1b27328d60f7f.png?raw=true){: loading=lazy }
+            ![Placeholder](https://github.com/AI2Business/ai2business/blob/main/docs/images/plottypes/get_complex_pairmapplot_fb3ba50582340191e6f1b27328d60f7f.png?raw=true){: loading=lazy }
             ```python
             >>> from ai2business.visualization import data_visualization as dav
             >>> data = dav.DataVisualization()
@@ -1217,7 +1226,7 @@ class DataVisualization:
             >>> data.pairmapplot(map=True)
             >>> builder.data_figure.save_all_figures(folder=folder)
             ```
-            ![Placeholder](https://github.com/AI2Business/ai2business/blob/main/docs/images/appearance/get_pairmapplot_292a3bb10c014dc2dd57a6a12eb608d3.png?raw=true){: loading=lazy }
+            ![Placeholder](https://github.com/AI2Business/ai2business/blob/main/docs/images/plottypes/get_pairmapplot_292a3bb10c014dc2dd57a6a12eb608d3.png?raw=true){: loading=lazy }
         """
         self.initialization_figure
         if complex:
