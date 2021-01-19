@@ -76,15 +76,15 @@ def py_to_nb_md(dest_dir, dir_path="tutorials"):
         github_repo_dir = "ai2business/ai2business/blob/main/docs/"
         with open(md_path, "r") as md_file:
             button_lines = [
-                # ":material-link: "
+                ":material-link: "
                 "[**View in Colab**](https://colab.research.google.com/github/"
                 + github_repo_dir
                 + "ipynb/"
                 + file_name_no_ext
                 + ".ipynb"
                 + ")   &nbsp; &nbsp;"
-                # + '<span class="k-dot">•</span>'
-                # + ":octicons-octoface-16: "
+                + '<span class="k-dot">•</span>'
+                + ":material-github: "
                 "[**GitHub source**](https://github.com/"
                 + github_repo_dir
                 + "tutorials/"

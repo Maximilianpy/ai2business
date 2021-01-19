@@ -494,11 +494,11 @@
     }
 }
 
-footer.insights {
+footer.insider {
     text-align: center
 }
 
-footer.insights hr {
+footer.insider hr {
     display: inline-block;
     width: 1.6rem;
     margin: 0 .7rem;
@@ -506,11 +506,11 @@ footer.insights hr {
     border-bottom: 2px solid var(--md-default-fg-color--lighter)
 }
 
-footer.insights:hover hr {
+footer.insider:hover hr {
     border-color: var(--md-accent-fg-color)
 }
 
-footer.insights:not(:hover) .twemoji.heart-throb-hover svg {
+footer.insider:not(:hover) .twemoji.heart-throb-hover svg {
     color: var(--md-default-fg-color--lighter) !important
 }
 

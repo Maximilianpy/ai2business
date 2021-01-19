@@ -1,4 +1,4 @@
-[**View in Colab**](https://colab.research.google.com/github/ai2business/ai2business/blob/main/docs/ipynb/trend_search_tutorial.ipynb)   &nbsp; &nbsp;[**GitHub source**](https://github.com/ai2business/ai2business/blob/main/docs/tutorials/trend_search_tutorial.py)
+:material-link: [**View in Colab**](https://colab.research.google.com/github/ai2business/ai2business/blob/main/docs/ipynb/trend_search_tutorial.ipynb)   &nbsp; &nbsp;<span class="k-dot">•</span>:material-github: [**GitHub source**](https://github.com/ai2business/ai2business/blob/main/docs/tutorials/trend_search_tutorial.py)
 
 ## Building a search trend dataframe
 

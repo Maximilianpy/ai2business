@@ -4,7 +4,6 @@ site_description: Smart solutions for Business with AI.
 site_author: AI2Business & coworkers
 
 
-docs_dir: src
 repo_url: https://github.com/AI2Business/ai2business
 repo_name: AI2Business
 edit_uri: edit/main/docs/src
@@ -12,9 +11,10 @@ edit_uri: edit/main/docs/src
 # Copyright
 copyright: Copyright &copy; 2020 - AI2Business
 
+docs_dir: src
 theme:
     name: material
-    custom_dir: src/theme
+    custom_dir: theme
     icon:
       logo: material/book-open-page-variant
     palette:
@@ -99,7 +99,7 @@ markdown_extensions:
   - pymdownx.mark:
   - pymdownx.striphtml:
   - pymdownx.snippets:
-      base_path: docs/src/markdown/_snippets
+      base_path: docs/src/_snippets
   - pymdownx.keys:
       separator: "\uff0b"
   - pymdownx.details:
@@ -109,6 +109,11 @@ markdown_extensions:
 extra_javascript:
   - https://unpkg.com/mermaid@8.4.4/dist/mermaid.min.js
   - js/version-select.js
+  - assets/pymdownx-extras/extra-uml-792ac706.js
+extra_css:
+  - css/version-select.css
+  - assets/pymdownx-extras/extra-5ee9fa49a5.css
+
 extra:
     social:
       - icon: fontawesome/brands/github
@@ -147,5 +152,3 @@ nav:
           - Data Visualization: data_visualization_api.md
       - Auto Machine Learning:
           - Deep Learning: deep_learning_api.md
-extra_css:
-  - css/version-select.css
