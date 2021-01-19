@@ -32,14 +32,6 @@ df_nan["four"] = "bar"
 df_nan["five"] = df_nan["one"] > 0
 df_nan = df_nan.reindex(["a", "b", "c", "d", "e", "f", "g", "h"])
 
-df_dict_fruits = one.TrendSearch.four_step_search(
-    keyword_list=[
-        "apple",
-        "pineapple",
-        "super market",
-        "home delivery",
-    ]
-)
 
 df_dict_years = one.TrendSearch.four_step_search(
     keyword_list=[
@@ -137,6 +129,16 @@ def test_lineplot_darkgrid():
     builder.data_figure.save_all_figures(folder=folder)
 
     assert len(list(Path(f"{folder}").glob("*.png"))) == 1
+
+
+df_dict_fruits = one.TrendSearch.four_step_search(
+    keyword_list=[
+        "apple",
+        "pineapple",
+        "super market",
+        "home delivery",
+    ]
+)
 
 
 def test_lineplot():
