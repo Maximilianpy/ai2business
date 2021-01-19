@@ -118,4 +118,4 @@ def generate(dest_dir):
 
 
 if __name__ == "__main__":
-    generate(ai2business_dir / "docs" / "sources")
+    generate(ai2business_dir / "docs" / "src")
