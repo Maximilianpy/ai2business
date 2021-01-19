@@ -1,4 +1,4 @@
-<span style="float:right;">[[source]](https://github.com/ai2business/ai2business/blob/main/ai2business/ai_engines/automl_neural_network.py#L16)</span>
+<span style="float:right;">[[source]](https://github.com/ai2business/ai2business/blob/main/ai2business/ai_engines/automl_neural_network.py#L30)</span>
 
 ### AutoMLModels
 
@@ -11,7 +11,7 @@ ai2business.ai_engines.automl_neural_network.AutoMLModels(
     overwrite=False,
     project_name="AutoML_DeepLearning",
     max_model_size=None,
-    max_trials=1,
+    max_trials=None,
     metrics=None,
     seed=None,
     tuner=None,
@@ -31,27 +31,6 @@ Here is the list of the current implemented auto-machine learning models from [A
 6. [Structured-Data-Regression](https://autokeras.com/tutorial/structured_data_regression/)
 7. [Mulit-Models](https://autokeras.com/tutorial/multi/)
 9. [Time-Series-Forcast](https://github.com/keras-team/autokeras/blob/9a6c49badad67a03d537de8cebbe6ea6eb66fa69/autokeras/tasks/time_series_forecaster.py)
-
-
-----
-
-<span style="float:right;">[[source]](https://github.com/ai2business/ai2business/blob/main/ai2business/ai_engines/automl_neural_network.py#L97)</span>
-
-### image_regression
-
-
-```python
-AutoMLModels.image_regression(output_dim=None, **kwargs)
-```
-
-
-Image Regression.
-
-Args:
-    output_dim (int, optional): Number of output dimensions. Defaults to None.
-
-Returns:
-    ak.ImageRegressor: AutoKERAS image regression class.
 
 
 ----
