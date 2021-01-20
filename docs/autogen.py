@@ -38,9 +38,11 @@ PAGES = {
     ],
     "Sample_Generators.md": [
         "ai2business.datasets.sample_generator.SampleGenerators",
-        "ai2business.datasets.sample_generator.SampleGenerators.four_step_search",
     ],
-    "Oneliner.md": ["ai2business.macros.oneliner.TrendSearch"],
+    "Oneliner.md": [
+        "ai2business.macros.oneliner.TrendSearch",
+        "ai2business.macros.oneliner.TrendSearch.four_step_search",
+    ],
 }
 
 
