@@ -7,8 +7,9 @@ mkdocs-material
 mkdocs-minify-plugin
 mkdocs-redirects
 mkdocs-git-revision-date-plugin
-mike
 pymdown-extensions
 mkdocs-git-revision-date-localized-plugin
 jupyter
 keras-autodoc
+mkdocs-minify-plugin
+pyspelling

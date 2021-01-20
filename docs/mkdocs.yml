@@ -4,35 +4,26 @@ site_description: Smart solutions for Business with AI.
 site_author: AI2Business & coworkers
 
 
-docs_dir: sources
 repo_url: https://github.com/AI2Business/ai2business
 repo_name: AI2Business
-edit_uri: edit/main/docs/sources
+edit_uri: edit/main/docs/src
 
 # Copyright
 copyright: Copyright &copy; 2020 - AI2Business
 
+docs_dir: src
 theme:
-    name: "material"
-    palette:
-      - scheme: dracula
-        primary: indigo
-        accent: blue
-        toggle:
-            icon: material/toggle-switch
-            name: Switch to light mode
-      - scheme: dracula
-        primary: blue
-        accent: light blue
-        toggle:
-            icon: material/toggle-switch-off-outline
-            name: Switch to dark mode
-    font:
-        text: Roboto
-        code: Roboto Mono
+    name: material
+    custom_dir: theme
     icon:
-        logo: material/library
-        repo: material/github
+      logo: material/book-open-page-variant
+    palette:
+      scheme: dracula
+      primary: deep purple
+      accent: deep purple
+    font:
+    text: Roboto
+    code: Roboto Mono
     favicon: assets/favicon.png
     features:
       - navigation.tabs
@@ -47,47 +38,86 @@ markdown_extensions:
   - codehilite
   - admonition
   - attr_list
+  - markdown.extensions.toc:
+      slugify: !!python/name:pymdownx.slugs.uslugify
+      permalink: ""
+  - markdown.extensions.admonition:
+  - markdown.extensions.smarty:
+      smart_quotes: false
+  - pymdownx.betterem:
+  - markdown.extensions.attr_list:
+  - markdown.extensions.def_list:
+  - markdown.extensions.tables:
+  - markdown.extensions.abbr:
+  - markdown.extensions.footnotes:
+  - markdown.extensions.md_in_html:
   - pymdownx.superfences:
-  - pymdownx.emoji:
+      preserve_tabs: true
+      custom_fences:
+        - name: mermaid
+          class: mermaid
+          format: !!python/name:pymdownx.superfences.fence_code_format
+        - name: math
+          class: arithmatex
+          format: !!python/name:pymdownx.arithmatex.fence_mathjax_format
   - pymdownx.highlight:
-  - pymdownx.arithmatex:
-  - pymdownx.mark:
-  - pymdownx.striphtml:
-  - pymdownx.details:
-  - pymdownx.tabbed:
-  - pymdownx.saneheaders:
+      extend_pygments_lang:
+        - name: php-inline
+          lang: php
+          options:
+            startinline: true
+        - name: pycon3
+          lang: pycon
+          options:
+            python3: true
+      linenums_style: pymdownx-inline
+  - pymdownx.inlinehilite:
+      custom_inline:
+        - name: math
+          class: arithmatex
+          format: !!python/name:pymdownx.arithmatex.inline_mathjax_format
+  - pymdownx.magiclink:
+      repo_url_shortener: true
+      repo_url_shorthand: true
+      social_url_shorthand: true
+      social_url_shortener: true
+      user: ai2business
+      repo: ai2business
   - pymdownx.tilde:
   - pymdownx.caret:
   - pymdownx.smartsymbols:
-  - pymdownx.magiclink:
-        repo_url_shortener: true
-        repo_url_shorthand: true
-        social_url_shorthand: true
-        social_url_shortener: true
-        user: ai2business
-        repo: ai2business
-  - pymdownx.highlight:
-        extend_pygments_lang:
-          - name: php-inline
-            lang: php
-            options:
-                startinline: true
-          - name: pycon3
-            lang: pycon
-            options:
-                python3: true
-        linenums_style: pymdownx-inline
+  - pymdownx.emoji:
+      emoji_index: !!python/name:materialx.emoji.twemoji
+      emoji_generator: !!python/name:materialx.emoji.to_svg
+  - pymdownx.escapeall:
+      hardbreak: True
+      nbsp: True
+  - pymdownx.tasklist:
+      custom_checkbox: true
+  - pymdownx.progressbar:
+  - pymdownx.arithmatex:
+  - pymdownx.mark:
+  - pymdownx.striphtml:
+  - pymdownx.snippets:
+      base_path: docs/src/_snippets
+  - pymdownx.keys:
+      separator: "\uff0b"
+  - pymdownx.details:
+  - pymdownx.tabbed:
+  - pymdownx.saneheaders:
 
 extra_javascript:
   - https://unpkg.com/mermaid@8.4.4/dist/mermaid.min.js
-
   - js/version-select.js
+  - assets/ai2business-extras/extra-uml-792ac706.js
+extra_css:
+  - css/version-select.css
+  - assets/ai2business-extras/extra-5ee9fa49a5.css
+
 extra:
     social:
       - icon: fontawesome/brands/github
         link: https://github.com/ai2business
-    version:
-        method: mike
 
 plugins:
   - search
@@ -96,10 +126,11 @@ plugins:
         watch:
           - ai2business
   - git-revision-date-localized
+  - minify:
+      minify_html: true
 
 nav:
   - Home: index.md
-
   - Documentation:
       - Sample Generators: Sample_Generators.md
       - Trend Search: Key_Performance_Collection.md
@@ -119,5 +150,3 @@ nav:
           - Data Visualization: data_visualization_api.md
       - Auto Machine Learning:
           - Deep Learning: deep_learning_api.md
-extra_css:
-  - css/version-select.css

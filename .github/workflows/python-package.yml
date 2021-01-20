@@ -97,27 +97,15 @@ jobs:
           cd docs
           pip install -r doc-requirements.txt
           python autogen.py
-          mike install-extras
-          mike deploy dev
+          mkdocs build --clean --verbose
+          cd ~
       - name: Deploy documentation develops
         if: contains(github.ref, 'refs/heads/main')
         run: |
           cd docs
           python autogen.py
-          mike delete dev || true
-          mike deploy --push dev --force
+          mkdocs gh-deploy --clean --force
           cd ~
-      - name: Get the release version
-        if: contains(github.ref, 'refs/tags/v')
-        id: get_version
-        run: |
-          echo ::set-output name=VERSION::${GITHUB_REF/refs\/tags\//}
-
-      - name: Deploy documentation new release
-        if: contains(github.ref, 'refs/tags/v')
-        run: |
-          mike deploy --push --update-aliases ${{ steps.get_version.outputs.VERSION }} latest
-          mike set-default --push ${{ steps.get_version.outputs.VERSION }}
       - name: Create Pull Request for IPython Notebooks
         if: github.event.pull_request.head.repo.full_name == github.repository
         uses: peter-evans/create-pull-request@v3
