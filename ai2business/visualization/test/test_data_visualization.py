@@ -14,12 +14,13 @@
 # ==============================================================================
 """Test-Environment for data_visualization."""
 
+import time
 from pathlib import Path
 
 import numpy as np
 import pandas as pd
 import seaborn as sns
-import time
+
 from ai2business.macros import oneliner as one
 from ai2business.visualization import data_visualization as dav
 
