@@ -109,17 +109,15 @@ markdown_extensions:
 extra_javascript:
   - https://unpkg.com/mermaid@8.4.4/dist/mermaid.min.js
   - js/version-select.js
-  - assets/pymdownx-extras/extra-uml-792ac706.js
+  - assets/ai2business-extras/extra-uml-792ac706.js
 extra_css:
   - css/version-select.css
-  - assets/pymdownx-extras/extra-5ee9fa49a5.css
+  - assets/ai2business-extras/extra-5ee9fa49a5.css
 
 extra:
     social:
       - icon: fontawesome/brands/github
         link: https://github.com/ai2business
-    version:
-        method: mike
 
 plugins:
   - search

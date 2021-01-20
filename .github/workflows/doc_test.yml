@@ -32,5 +32,4 @@ jobs:
           cd docs
           pip install -r doc-requirements.txt
           python autogen.py
-          mike install-extras
-          mike deploy dev
+          mkdocs build

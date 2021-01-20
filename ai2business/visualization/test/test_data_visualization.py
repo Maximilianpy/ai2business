@@ -14,6 +14,7 @@
 # ==============================================================================
 """Test-Environment for data_visualization."""
 
+import time
 from pathlib import Path
 
 import numpy as np
@@ -40,6 +41,18 @@ df_dict_years = one.TrendSearch.four_step_search(
         "2019",
         "2020",
         "2021",
+    ]
+)
+
+# Get time for another round of web trend search
+time.sleep(180)
+
+df_dict_fruits = one.TrendSearch.four_step_search(
+    keyword_list=[
+        "apple",
+        "pineapple",
+        "super market",
+        "home delivery",
     ]
 )
 
@@ -129,16 +142,6 @@ def test_lineplot_darkgrid():
     builder.data_figure.save_all_figures(folder=folder)
 
     assert len(list(Path(f"{folder}").glob("*.png"))) == 1
-
-
-df_dict_fruits = one.TrendSearch.four_step_search(
-    keyword_list=[
-        "apple",
-        "pineapple",
-        "super market",
-        "home delivery",
-    ]
-)
 
 
 def test_lineplot():
