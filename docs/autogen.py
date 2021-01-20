@@ -36,7 +36,10 @@ PAGES = {
         "ai2business.visualization.data_visualization.DataVisualization.pairmap",
         "ai2business.visualization.data_visualization.DataVisualization.swarmplot",
     ],
-    "Sample_Generators.md": ["ai2business.datasets.sample_generator.SampleGenerators"],
+    "Sample_Generators.md": [
+        "ai2business.datasets.sample_generator.SampleGenerators",
+        "ai2business.datasets.sample_generator.SampleGenerators.four_step_search",
+    ],
     "Oneliner.md": ["ai2business.macros.oneliner.TrendSearch"],
 }
 
