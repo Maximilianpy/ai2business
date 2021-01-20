@@ -14,13 +14,12 @@
 # ==============================================================================
 """Test-Environment for data_visualization."""
 
-import time
 from pathlib import Path
 
 import numpy as np
 import pandas as pd
 import seaborn as sns
-
+import time
 from ai2business.macros import oneliner as one
 from ai2business.visualization import data_visualization as dav
 
@@ -36,8 +35,6 @@ df_nan = df_nan.reindex(["a", "b", "c", "d", "e", "f", "g", "h"])
 
 df_dict_years = one.TrendSearch.four_step_search(
     keyword_list=[
-        "2017",
-        "2018",
         "2019",
         "2020",
         "2021",
