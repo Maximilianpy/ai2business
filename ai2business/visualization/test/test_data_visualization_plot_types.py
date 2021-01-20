@@ -45,7 +45,6 @@ def test_lineplot():
     data.lineplot()
     folder = f"{test_lineplot.__name__}"
     builder.data_figure.save_all_figures(folder=folder)
-
     assert len(list(Path(f"{folder}").glob("*.png"))) == 1
 
 
