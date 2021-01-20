@@ -726,8 +726,15 @@ class DataVisualization:
         >>> from ai2business.macros import oneliner as one
         >>> from ai2business.visualization import data_visualization as dav
 
-        >>> df_dict_years = one.TrendSearch.four_step_search(keyword_list=[ "2017", "2018", "2019", "2020", "2021", ])
-
+        >>> df_dict_years = one.TrendSearch.four_step_search(
+                keyword_list=[
+                    "2017",
+                    "2018",
+                    "2019",
+                    "2020",
+                    "2021",
+                ]
+            )
         >>> data = dav.DataVisualization()
         >>> builder = dav.DesignerDataVisualization(df_dict_years["get_interest_over_time"])
         >>> data.builder = builder
@@ -736,6 +743,20 @@ class DataVisualization:
         >>> data.lineplot()
         >>> builder.data_figure.save_all_figures(folder=folder)
         ```
+
+        For the non time series plot the following dataframe is used:
+        ```python
+        >>> from ai2business.macros import oneliner as one
+        >>>  df_dict_fruits = one.TrendSearch.four_step_search(
+                keyword_list=[
+                    "apple",
+                    "pineapple",
+                    "super market",
+                    "home delivery",
+                ]
+            )
+        ```
+
     !!! tip "Activating hidden functions of the `seaborn`-module!"
         Due to the seaborn module's complexity, only the significant __four__
         variables (x_label, y_label, hue, palette) are defined in

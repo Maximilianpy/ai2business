@@ -34,17 +34,7 @@ df_nan["five"] = df_nan["one"] > 0
 df_nan = df_nan.reindex(["a", "b", "c", "d", "e", "f", "g", "h"])
 
 
-df_dict_years = one.TrendSearch.four_step_search(
-    keyword_list=[
-        "2019",
-        "2020",
-        "2021",
-    ]
-)
-
-# Get time for another round of web trend search
 time.sleep(180)
-
 df_dict_fruits = one.TrendSearch.four_step_search(
     keyword_list=[
         "apple",
@@ -93,7 +83,7 @@ def test_save_all_figures():
 
 def test_lineplot_white():
     data = dav.DataVisualization()
-    builder = dav.DesignerDataVisualization(df_dict_years["get_interest_over_time"])
+    builder = dav.DesignerDataVisualization(df_dict_fruits["get_interest_over_time"])
     data.builder = builder
     data.lineplot()
     folder = "tmp_white"
@@ -106,7 +96,7 @@ def test_lineplot_dark():
     # Test lineplot with new data set:
     data = dav.DataVisualization()
     builder = dav.DesignerDataVisualization(
-        df_dict_years["get_interest_over_time"],
+        df_dict_fruits["get_interest_over_time"],
         dark_mode=True,
     )
     data.builder = builder
@@ -119,7 +109,7 @@ def test_lineplot_dark():
 def test_lineplot_whitegrid():
     data = dav.DataVisualization()
     builder = dav.DesignerDataVisualization(
-        df_dict_years["get_interest_over_time"], grid=True
+        df_dict_fruits["get_interest_over_time"], grid=True
     )
     data.builder = builder
     data.lineplot()
@@ -132,7 +122,7 @@ def test_lineplot_whitegrid():
 def test_lineplot_darkgrid():
     data = dav.DataVisualization()
     builder = dav.DesignerDataVisualization(
-        df_dict_years["get_interest_over_time"], dark_mode=True, grid=True
+        df_dict_fruits["get_interest_over_time"], dark_mode=True, grid=True
     )
     data.builder = builder
     data.lineplot()
