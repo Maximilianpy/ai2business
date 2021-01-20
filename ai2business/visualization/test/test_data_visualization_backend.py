@@ -19,7 +19,6 @@ from pathlib import Path
 
 import numpy as np
 import pandas as pd
-import seaborn as sns
 
 from ai2business.macros import oneliner as one
 from ai2business.visualization import data_visualization as dav
@@ -77,49 +76,3 @@ def test_save_all_figures():
     data.visual_missing_data()
     builder.data_figure.save_all_figures(folder="tmp")
     assert len(list(Path("tmp").glob("*.png"))) == 4
-
-
-iris_dataframe = sns.load_dataset("iris")
-
-
-def test_lineplot_white():
-    data = dav.DataVisualization()
-    builder = dav.DesignerDataVisualization(iris_dataframe)
-    data.builder = builder
-    data.lineplot()
-    folder = "tmp_white"
-    builder.data_figure.save_all_figures(folder=folder)
-    assert len(list(Path(f"{folder}").glob("*.png"))) == 1
-
-
-def test_lineplot_dark():
-    data = dav.DataVisualization()
-    builder = dav.DesignerDataVisualization(
-        iris_dataframe,
-        dark_mode=True,
-    )
-    data.builder = builder
-    data.lineplot()
-    folder = "tmp_dark"
-    builder.data_figure.save_all_figures(folder=folder)
-    assert len(list(Path(f"{folder}").glob("*.png"))) == 1
-
-
-def test_lineplot_whitegrid():
-    data = dav.DataVisualization()
-    builder = dav.DesignerDataVisualization(iris_dataframe, grid=True)
-    data.builder = builder
-    data.lineplot()
-    folder = "tmp_whitegrid"
-    builder.data_figure.save_all_figures(folder=folder)
-    assert len(list(Path(f"{folder}").glob("*.png"))) == 1
-
-
-def test_lineplot_darkgrid():
-    data = dav.DataVisualization()
-    builder = dav.DesignerDataVisualization(iris_dataframe, dark_mode=True, grid=True)
-    data.builder = builder
-    data.lineplot()
-    folder = "tmp_darkgrid"
-    builder.data_figure.save_all_figures(folder=folder)
-    assert len(list(Path(f"{folder}").glob("*.png"))) == 1
