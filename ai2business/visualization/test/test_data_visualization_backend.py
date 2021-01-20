@@ -79,6 +79,17 @@ def test_save_all_figures():
     assert len(list(Path("tmp").glob("*.png"))) == 4
 
 
+time.sleep(180)
+df_dict_years = one.TrendSearch.four_step_search(
+    keyword_list=[
+        "2018",
+        "2019",
+        "2020",
+        "2021",
+    ]
+)
+
+
 def test_lineplot_white():
     data = dav.DataVisualization()
     builder = dav.DesignerDataVisualization(df_dict_years["get_interest_over_time"])
