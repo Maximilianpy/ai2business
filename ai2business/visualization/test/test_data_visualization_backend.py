@@ -95,7 +95,7 @@ def test_lineplot_white():
 def test_lineplot_dark():
     data = dav.DataVisualization()
     builder = dav.DesignerDataVisualization(
-        df_dict_years["get_interest_over_time"],
+        iris_dataframe,
         dark_mode=True,
     )
     data.builder = builder
