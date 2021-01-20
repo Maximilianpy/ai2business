@@ -17,6 +17,7 @@ from abc import ABC, abstractmethod, abstractproperty, abstractstaticmethod
 
 import pandas as pd
 import yfinance as yf
+from typing import Callable
 
 
 class BuilderFinanceCollector(ABC):
@@ -30,12 +31,8 @@ class BuilderFinanceCollector(ABC):
     """
 
     @abstractproperty
-    def return_dataframe(self) -> None:
-        """Abstract property of return_dataframe."""
-
-    @abstractproperty
-    def return_dict(self) -> None:
-        """Abstract property of return_dict."""
+    def stock(self) -> None:
+        """Abstract property of stock."""
 
     @abstractstaticmethod
     def all_trickers() -> None:
@@ -126,6 +123,37 @@ class BuilderFinanceCollector(ABC):
         """Abstract method of get_options."""
 
 
+class FinanceProduct:
+    """FinanceProduct contains the dictionary and the return value of it."""
+
+    def __init__(self) -> None:
+        """Initialization of FinanceProduct."""
+        self.product_parts = {}
+
+    def add_product(self, key: Callable, value: pd.DataFrame or dict) -> None:
+        """Add the components of the trend search to the dictionary.
+
+        Args:
+            key (Callable): Used trend search function
+            value (pd.DataFrame or dict): Return value as dataframe or dictionary of the function.
+        """
+        self.product_parts[key.__name__] = value
+
+    @property
+    def list_product_parts(self) -> str:
+        """List of the product parts in the dictionary."""
+        return f"Product parts: {', '.join(self.product_parts)}"
+
+    @property
+    def return_product(self) -> dict:
+        """Returns the product as a dictionary
+
+        Returns:
+            dict: The product dictionary contains the product and ist function name as `key`.
+        """
+        return self.product_parts
+
+
 class DesignerFinanceCollector(BuilderFinanceCollector):
     """DesignerTrendsCollector contains the specific implementation of
     `BuilderFinanceCollector`.
@@ -144,31 +172,25 @@ class DesignerFinanceCollector(BuilderFinanceCollector):
             keyword_list (list): Keyword-list with the tickers to search for.
         """
         self.keyword_list = keyword_list
-        self.tickers = yf.Tickers(" ".join(self.keyword_list))
+        self.tickers = {str(isin): yf.Ticker(isin) for isin in self.keyword_list}
         self.df = pd.DataFrame()
         self.dict = {}
+        self.reset()
+
+    def reset(self) -> None:
+        """Reset the product to empty."""
+        self._product = FinanceProduct()
 
     @property
-    def return_dataframe(self) -> pd.DataFrame:
-        """Return the ticker results as dataframe.
+    def stock(self) -> FinanceProduct:
+        """Return the trend results.
 
         Returns:
-            pd.DataFrame: Two-dimensional, size-mutable, homogenous tabular data, which contains the ticker results as time-series.
+            FinanceProduct: (class) FinanceProduct contains the dictionary and the return value of it.
         """
-        return self.df
-
-    @property
-    def return_dict(self) -> dict:
-        """Return the search results as dictionary.
-
-        Note:
-        ---
-        `return_dict` is especially useful for getting analysis reports of tickers, market changes, or institutional forecasts.
-
-        Returns:
-            dict: Multi-dimensional, size-mutable, mainly heterogeneous data as dictionary, which contains the `clustered` or `nested` ticker results.
-        """
-        return self.dict
+        product = self._product
+        self.reset()
+        return product
 
     @staticmethod
     def all_trickers(
@@ -183,8 +205,6 @@ class DesignerFinanceCollector(BuilderFinanceCollector):
             keyword_list (list): Keyword-list with the tickers to search for.
             func (str): Specific class as string.
 
-        Returns:
-            pd.DataFrame: Two-dimensional, size-mutable, heterogenous (table in a table) tabular data, which contains the ticker results of different companies.
         """
         return {
             keyword: getattr(getattr(tickers.tickers, keyword), func)
