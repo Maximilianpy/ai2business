@@ -36,7 +36,11 @@ df_dict_fruits = one.TrendSearch.four_step_search(
 def test_lineplot():
     # Test lineplot with new data set:
     data = dav.DataVisualization()
-    builder = dav.DesignerDataVisualization(df_dict_fruits["get_interest_over_time"])
+    builder = dav.DesignerDataVisualization(
+        df_dict_fruits["get_interest_over_time"],
+        x_label="apple",
+        y_label="pineapple",
+    )
     data.builder = builder
     data.lineplot()
     folder = f"{test_lineplot.__name__}"
@@ -263,6 +267,8 @@ def test_densitymap():
     data = dav.DataVisualization()
     builder = dav.DesignerDataVisualization(
         df_dict_fruits["get_interest_over_time"],
+        x_label="apple",
+        y_label="pineapple",
     )
     data.builder = builder
     data.densitymap()
