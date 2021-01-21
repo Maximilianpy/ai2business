@@ -14,10 +14,10 @@
 # ==============================================================================
 """Finance Collection Module: Collecting Financial and Ticker Trends via http-API."""
 from abc import ABC, abstractmethod, abstractproperty, abstractstaticmethod
+from typing import Callable
 
 import pandas as pd
 import yfinance as yf
-from typing import Callable
 
 
 class BuilderFinanceCollector(ABC):
@@ -34,8 +34,8 @@ class BuilderFinanceCollector(ABC):
     def stock(self) -> None:
         """Abstract property of stock."""
 
-    @abstractstaticmethod
-    def all_trickers() -> None:
+    @abstractmethod
+    def all_tickers() -> None:
         """Abstract staticmethod of all_tickers."""
 
     @abstractmethod
@@ -172,7 +172,7 @@ class DesignerFinanceCollector(BuilderFinanceCollector):
             keyword_list (list): Keyword-list with the tickers to search for.
         """
         self.keyword_list = keyword_list
-        self.tickers = {str(isin): yf.Ticker(isin) for isin in self.keyword_list}
+        self.tickers = {str(_isin): yf.Ticker(_isin) for _isin in self.keyword_list}
         self.df = pd.DataFrame()
         self.dict = {}
         self.reset()
@@ -192,24 +192,19 @@ class DesignerFinanceCollector(BuilderFinanceCollector):
         self.reset()
         return product
 
-    @staticmethod
-    def all_trickers(
-        tickers: yf.Tickers, keyword_list: list, func: str
-    ) -> pd.DataFrame:
-        """all_trickers [summary]
+    def all_tickers(self, func: str) -> dict:
+        """Get apply the `yfinance`-function to all tickers.
 
-        [extended_summary]
+        Apply the request function to all tickers by decomposing the `self.tickers`.
 
         Args:
-            tickers (yf.Tickers): Finance market data downloader.
-            keyword_list (list): Keyword-list with the tickers to search for.
-            func (str): Specific class as string.
+            func (str): Name of `yfinance`-function.
 
+        Returns:
+            dict: Dictionary with the dataframes for the requested information for all
+                listed tickers.
         """
-        return {
-            keyword: getattr(getattr(tickers.tickers, keyword), func)
-            for keyword in keyword_list
-        }
+        return {key: getattr(value, func) for key, value in self.tickers.items()}
 
     def get_chart_history(
         self,
@@ -241,165 +236,166 @@ class DesignerFinanceCollector(BuilderFinanceCollector):
             group_by (str): Grouping by ticker or column.
             progress (bool): Showing progress bar.
         """
-        self.df = self.tickers.history(
-            period=period,
-            interval=interval,
-            start=start,
-            end=end,
-            prepost=prepost,
-            actions=actions,
-            auto_adjust=auto_adjust,
-            proxy=proxy,
-            threads=threads,
-            group_by=group_by,
-            progress=progress,
-            **kwargs,
+
+        self._product.add_product(
+            key=self.get_chart_history,
+            value={
+                key: value.history(
+                    period=period,
+                    interval=interval,
+                    start=start,
+                    end=end,
+                    prepost=prepost,
+                    actions=actions,
+                    auto_adjust=auto_adjust,
+                    proxy=proxy,
+                    threads=threads,
+                    group_by=group_by,
+                    progress=progress,
+                    **kwargs,
+                )
+                for key, value in self.tickers.items()
+            },
         )
 
     def get_isin_code(self) -> None:
         """Request for the International Securities Identification Number (ISIN)."""
-        self.dict = self.all_trickers(
-            tickers=self.tickers, keyword_list=self.keyword_list, func="isin"
+        self._product.add_product(
+            key=self.get_isin_code,
+            value=self.all_tickers(func="isin"),
         )
 
     def get_major_holders(self) -> None:
         """Request for the major holders of the ticker."""
-        self.dict = self.all_trickers(
-            tickers=self.tickers, keyword_list=self.keyword_list, func="major_holders"
+        self._product.add_product(
+            key=self.get_major_holders,
+            value=self.all_tickers(func="major_holders"),
         )
 
     def get_institutional_holders(self) -> None:
         """Request for the institutional holders of the ticker."""
-        self.dict = self.all_trickers(
-            tickers=self.tickers,
-            keyword_list=self.keyword_list,
-            func="institutional_holders",
+        self._product.add_product(
+            key=self.get_institutional_holders,
+            value=self.all_tickers(func="institutional_holders"),
         )
 
     def get_mutualfund_holders(self) -> None:
         """Request for the mutualfund holders of the ticker."""
-        self.dict = self.all_trickers(
-            tickers=self.tickers,
-            keyword_list=self.keyword_list,
-            func="mutualfund_holders",
+        self._product.add_product(
+            key=self.get_mutualfund_holders,
+            value=self.all_tickers(func="mutualfund_holders"),
         )
 
     def get_dividends(self) -> None:
         """Request for the dividend of the ticker."""
-        self.dict = self.all_trickers(
-            tickers=self.tickers, keyword_list=self.keyword_list, func="dividends"
+        self._product.add_product(
+            key=self.get_dividends,
+            value=self.all_tickers(func="dividends"),
         )
 
     def get_splits(self) -> None:
         """Request for the splits of the ticker."""
-        self.dict = self.all_trickers(
-            tickers=self.tickers, keyword_list=self.keyword_list, func="splits"
+        self._product.add_product(
+            key=self.get_splits,
+            value=self.all_tickers(func="splits"),
         )
 
     def get_actions(self) -> None:
         """Request for the dividends and splits of the ticker together."""
-        self.dict = self.all_trickers(
-            tickers=self.tickers, keyword_list=self.keyword_list, func="actions"
+        self._product.add_product(
+            key=self.get_actions,
+            value=self.all_tickers(func="actions"),
         )
 
     def get_info(self) -> None:
         """Request for information about the ticker."""
-        self.dict = self.all_trickers(
-            tickers=self.tickers, keyword_list=self.keyword_list, func="info"
+        self._product.add_product(
+            key=self.get_info,
+            value=self.all_tickers(func="info"),
         )
 
     def get_calendar(self) -> None:
         """Request for information about upcoming events of the ticker."""
-        self.dict = self.all_trickers(
-            tickers=self.tickers, keyword_list=self.keyword_list, func="calendar"
+        self._product.add_product(
+            key=self.get_calendar,
+            value=self.all_tickers(func="calendar"),
         )
 
     def get_recommendations(self) -> None:
         """Request for the analyst recommendations for the ticker."""
-        self.dict = self.all_trickers(
-            tickers=self.tickers,
-            keyword_list=self.keyword_list,
-            func="recommendations",
+        self._product.add_product(
+            key=self.get_recommendations,
+            value=self.all_tickers(func="recommendations"),
         )
 
     def get_earnings(self) -> None:
         """Request for the yearly earnings of the ticker."""
-        self.dict = self.all_trickers(
-            tickers=self.tickers,
-            keyword_list=self.keyword_list,
-            func="earnings",
+        self._product.add_product(
+            key=self.get_earnings,
+            value=self.all_tickers(func="earnings"),
         )
 
     def get_quarterly_earnings(self) -> None:
         """Request for the yearly quarterly of the ticker."""
-        self.dict = self.all_trickers(
-            tickers=self.tickers,
-            keyword_list=self.keyword_list,
-            func="quarterly_earnings",
+        self._product.add_product(
+            key=self.get_quarterly_earnings,
+            value=self.all_tickers(func="quarterly_earnings"),
         )
 
     def get_financials(self) -> None:
         """Request for the yearly financial information of the ticker."""
-        self.dict = self.all_trickers(
-            tickers=self.tickers,
-            keyword_list=self.keyword_list,
-            func="financials",
+        self._product.add_product(
+            key=self.get_financials,
+            value=self.all_tickers(func="financials"),
         )
 
     def get_quarterly_financials(self) -> None:
         """Request for the quarterly financial information of the ticker."""
-        self.dict = self.all_trickers(
-            tickers=self.tickers,
-            keyword_list=self.keyword_list,
-            func="quarterly_financials",
+        self._product.add_product(
+            key=self.get_quarterly_financials,
+            value=self.all_tickers(func="quarterly_financials"),
         )
 
     def get_balancesheet(self) -> None:
         """Request for the yearly balancesheet of the ticker."""
-        self.dict = self.all_trickers(
-            tickers=self.tickers,
-            keyword_list=self.keyword_list,
-            func="balancesheet",
+        self._product.add_product(
+            key=self.get_balancesheet,
+            value=self.all_tickers(func="balancesheet"),
         )
 
     def get_quarterly_balancesheet(self) -> None:
         """Request for the quarterly balancesheet of the ticker."""
-        self.dict = self.all_trickers(
-            tickers=self.tickers,
-            keyword_list=self.keyword_list,
-            func="quarterly_balancesheet",
+        self._product.add_product(
+            key=self.get_quarterly_balancesheet,
+            value=self.all_tickers(func="quarterly_balancesheet"),
         )
 
     def get_cashflow(self) -> None:
         """Request for the yearly cashflow of the ticker."""
-        self.dict = self.all_trickers(
-            tickers=self.tickers,
-            keyword_list=self.keyword_list,
-            func="cashflow",
+        self._product.add_product(
+            key=self.get_cashflow,
+            value=self.all_tickers(func="cashflow"),
         )
 
     def get_quarterly_cashflow(self) -> None:
         """Request for the quarterly cashflow of the ticker."""
-        self.dict = self.all_trickers(
-            tickers=self.tickers,
-            keyword_list=self.keyword_list,
-            func="quarterly_cashflow",
+        self._product.add_product(
+            key=self.get_quarterly_cashflow,
+            value=self.all_tickers(func="quarterly_cashflow"),
         )
 
     def get_sustainability(self) -> None:
         """Request for information about the sustainability of the ticker."""
-        self.dict = self.all_trickers(
-            tickers=self.tickers,
-            keyword_list=self.keyword_list,
-            func="sustainability",
+        self._product.add_product(
+            key=self.get_sustainability,
+            value=self.all_tickers(func="sustainability"),
         )
 
     def get_options(self) -> None:
         """Request for information about the options of the ticker."""
-        self.dict = self.all_trickers(
-            tickers=self.tickers,
-            keyword_list=self.keyword_list,
-            func="options",
+        self._product.add_product(
+            key=self.get_options,
+            value=self.all_tickers(func="options"),
         )
 
 
