@@ -39,7 +39,9 @@ def test_find_major_holders_dict():
 
 def test_find_institutional_holders():
     ticker.find_institutional_holders()
-    assert type(builder.stock.return_product["get_institutional_holders"]) == type(dict())
+    assert type(builder.stock.return_product["get_institutional_holders"]) == type(
+        dict()
+    )
 
 
 def test_find_mutualfund_holders():
@@ -94,7 +96,9 @@ def test_find_financials():
 
 def test_find_quarterly_financials():
     ticker.find_quarterly_financials()
-    assert type(builder.stock.return_product["get_quarterly_financials"]) == type(dict())
+    assert type(builder.stock.return_product["get_quarterly_financials"]) == type(
+        dict()
+    )
 
 
 def test_find_balancesheet():
@@ -104,7 +108,9 @@ def test_find_balancesheet():
 
 def test_find_quarterly_balancesheet():
     ticker.find_quarterly_balancesheet()
-    assert type(builder.stock.return_product["get_quarterly_balancesheet"]) == type(dict())
+    assert type(builder.stock.return_product["get_quarterly_balancesheet"]) == type(
+        dict()
+    )
 
 
 def test_find_cashflow():
@@ -125,3 +131,16 @@ def test_find_sustainability():
 def test_find_options():
     ticker.find_options()
     assert type(builder.stock.return_product["get_options"]) == type(dict())
+
+
+def test_special_char():
+    ticker = fnc.FinanceCollector()
+    builder = fnc.DesignerFinanceCollector(
+        [
+            "CLT=F",
+            "^GSPC",
+        ]
+    )
+    ticker.builder = builder
+    ticker.find_chart_histogram()
+    assert type(builder.stock.return_product["get_chart_history"]) == type(dict())
