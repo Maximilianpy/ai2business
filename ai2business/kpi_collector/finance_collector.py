@@ -13,7 +13,7 @@
 # limitations under the License.
 # ==============================================================================
 """Finance Collection Module: Collecting Financial and Ticker Trends via http-API."""
-from abc import ABC, abstractmethod, abstractproperty, abstractstaticmethod
+from abc import ABC, abstractmethod, abstractproperty
 from typing import Callable
 
 import pandas as pd

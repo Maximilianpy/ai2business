@@ -33,7 +33,7 @@ df_nan["five"] = df_nan["one"] > 0
 df_nan = df_nan.reindex(["a", "b", "c", "d", "e", "f", "g", "h"])
 
 time.sleep(180)
-df_dict_years = one.TrendSearch.four_step_search(
+df_dict_years = one.Search.four_step_trendsearch(
     keyword_list=[
         "2018",
         "2019",

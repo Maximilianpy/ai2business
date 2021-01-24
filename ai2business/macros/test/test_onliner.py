@@ -17,9 +17,9 @@
 from ai2business.macros import oneliner
 
 
-def test_four_step_search() -> None:
+def test_four_step_trendsearch() -> None:
 
-    result = oneliner.TrendSearch.four_step_search(keyword_list=["2019", "2020"])
+    result = oneliner.Search.four_step_trendsearch(keyword_list=["2019", "2020"])
     assert list(result.keys()) == [
         "get_interest_over_time",
         "get_interest_by_region",

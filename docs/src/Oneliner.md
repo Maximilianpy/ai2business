@@ -1,10 +1,10 @@
 <span style="float:right;">[[source]](https://github.com/ai2business/ai2business/blob/main/ai2business/macros/oneliner.py#L22)</span>
 
-### TrendSearch
+### Search
 
 
 ```python
-ai2business.macros.oneliner.TrendSearch(*args, **kwargs)
+ai2business.macros.oneliner.Search(*args, **kwargs)
 ```
 
 

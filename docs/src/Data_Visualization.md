@@ -18,7 +18,7 @@ variations using the same building steps.
     >>> from ai2business.macros import oneliner as one
     >>> from ai2business.visualization import data_visualization as dav
 
-    >>> df_dict_years = one.TrendSearch.four_step_search(keyword_list=[ "2017", "2018", "2019", "2020", "2021", ])
+    >>> df_dict_years = one.Search.four_step_trendsearch(keyword_list=[ "2017", "2018", "2019", "2020", "2021", ])
 
     >>> data = dav.DataVisualization()
     >>> builder = dav.DesignerDataVisualization(df_dict_years["get_interest_over_time"])

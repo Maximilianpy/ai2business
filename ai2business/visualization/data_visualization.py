@@ -133,10 +133,6 @@ class BuilderDataVisualization(ABC):
         """Abstract method of get_marginalplot."""
 
     @abstractmethod
-    def get_pairmapplot(self) -> None:
-        """Abstract method of get_pairmapplot."""
-
-    @abstractmethod
     def get_complex_pairmapplot(self) -> None:
         """Abstract method of get_complex_pairmapplot."""
 
@@ -602,10 +598,8 @@ class DesignerDataVisualization(BuilderDataVisualization):
         """Get a pair plot."""
         self._product.add_product(
             key=self.get_pairmapplot,
-            value=sns.lmplot(
+            value=sns.pairplot(
                 data=self.df,
-                x=self.x_label,
-                y=self.y_label,
                 hue=self.hue,
                 palette=self.palette,
                 **kwargs,
@@ -726,7 +720,7 @@ class DataVisualization:
         >>> from ai2business.macros import oneliner as one
         >>> from ai2business.visualization import data_visualization as dav
 
-        >>> df_dict_years = one.TrendSearch.four_step_search(
+        >>> df_dict_years = one.Search.four_step_trendsearch(
                 keyword_list=[
                     "2017",
                     "2018",
@@ -747,7 +741,7 @@ class DataVisualization:
         For the non time series plot the following dataframe is used:
         ```python
         >>> from ai2business.macros import oneliner as one
-        >>>  df_dict_fruits = one.TrendSearch.four_step_search(
+        >>>  df_dict_fruits = one.Search.four_step_trendsearch(
                 keyword_list=[
                     "apple",
                     "pineapple",
@@ -876,7 +870,7 @@ class DataVisualization:
             >>> data.pointplot()
             >>> builder.data_figure.save_all_figures(folder=folder)
             ```
-            ![Placeholder](https://github.com/AI2Business/ai2business/blob/main/docs/images/appearance/get_pointplot_3216f41c8e8eb4977ab1870368daea37.png?raw=true){: loading=lazy }
+            ![Placeholder](https://github.com/AI2Business/ai2business/blob/main/docs/images/plottypes/get_pointplot_3216f41c8e8eb4977ab1870368daea37.png?raw=true){: loading=lazy }
         """
         self.initialization_figure
         self.builder.get_pointplot(**kwargs)
@@ -1035,7 +1029,7 @@ class DataVisualization:
             >>> data.histogramplot()
             >>> builder.data_figure.save_all_figures(folder=folder)
             ```
-            ![Placeholder](https://github.com/AI2Business/ai2business/blob/main/docs/images/appearance/get_histogramplot_ceed49b02f48ef9f57e863fbcc98f5dd.png?raw=true){: loading=lazy }
+            ![Placeholder](https://github.com/AI2Business/ai2business/blob/main/docs/images/plottypes/get_histogramplot_ceed49b02f48ef9f57e863fbcc98f5dd.png?raw=true){: loading=lazy }
         """
         self.initialization_figure
         self.builder.get_histogramplot(**kwargs)
@@ -1096,7 +1090,7 @@ class DataVisualization:
             >>> data.regressionmapplot(map=True)
             >>> builder.data_figure.save_all_figures(folder=folder)
             ```
-            ![Placeholder](https://github.com/AI2Business/ai2business/blob/main/docs/images/plottypes/get_density_mapplot_aa27faf44d09f3cf3e1ca549bfe12d1b.png?raw=true){: loading=lazy }
+            ![Placeholder](https://github.com/AI2Business/ai2business/blob/main/docs/images/plottypes/get_regression_mapplot_eefda6165b46c96402cd5e2b48bce5b2.png?raw=true){: loading=lazy }
 
         """
         self.initialization_figure
@@ -1238,7 +1232,7 @@ class DataVisualization:
             >>> data.complexpairmapplot(map=False)
             >>> builder.data_figure.save_all_figures(folder=folder)
             ```
-            ![Placeholder](https://github.com/AI2Business/ai2business/blob/main/docs/images/plottypes/get_complex_pairmapplot_fb3ba50582340191e6f1b27328d60f7f.png?raw=true){: loading=lazy }
+            ![Placeholder](https://github.com/AI2Business/ai2business/blob/main/docs/images/plottypes/get_pairmapplot_449e8c4a5b200903fe32432ec6f440b7.png?raw=true){: loading=lazy }
             ```python
             >>> from ai2business.visualization import data_visualization as dav
             >>> data = dav.DataVisualization()
@@ -1247,7 +1241,7 @@ class DataVisualization:
             >>> data.pairmapplot(map=True)
             >>> builder.data_figure.save_all_figures(folder=folder)
             ```
-            ![Placeholder](https://github.com/AI2Business/ai2business/blob/main/docs/images/plottypes/get_pairmapplot_292a3bb10c014dc2dd57a6a12eb608d3.png?raw=true){: loading=lazy }
+            ![Placeholder](https://github.com/AI2Business/ai2business/blob/main/docs/images/plottypes/get_complex_pairmapplot_fb3ba50582340191e6f1b27328d60f7f.png?raw=true){: loading=lazy }
         """
         self.initialization_figure
         if complex:

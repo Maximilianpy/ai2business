@@ -23,7 +23,7 @@ from ai2business.macros import oneliner as one
 from ai2business.visualization import data_visualization as dav
 
 time.sleep(180)
-df_dict_fruits = one.TrendSearch.four_step_search(
+df_dict_fruits = one.Search.four_step_trendsearch(
     keyword_list=[
         "apple",
         "pineapple",
