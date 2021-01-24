@@ -14,6 +14,9 @@
 # ==============================================================================
 """Test-Environment for oneliner."""
 
+from pathlib import Path
+
+from ai2business.kpi_collector import finance_collector as fnc
 from ai2business.macros import oneliner
 
 
@@ -26,3 +29,50 @@ def test_four_step_trendsearch() -> None:
         "get_related_topics",
         "get_related_queries",
     ]
+
+
+def test_plotdata() -> None:
+
+    ticker = fnc.FinanceCollector()
+    builder = fnc.DesignerFinanceCollector(["GOOG"])
+    ticker.builder = builder
+    ticker.find_chart_histogram()
+    folder = f"{test_plotdata.__name__}"
+    oneliner.Plot.plotdata(
+        builder.stock.return_product["get_chart_history"]["GOOG"],
+        plot_type="lineplot",
+        folder=folder,
+    )
+    assert len(list(Path(f"{folder}").glob("*.png"))) == 1
+
+
+def test_plotdata_failed() -> None:
+
+    ticker = fnc.FinanceCollector()
+    builder = fnc.DesignerFinanceCollector(["GOOG"])
+    ticker.builder = builder
+    ticker.find_chart_histogram()
+    folder = f"{test_plotdata_failed.__name__}"
+    oneliner.Plot.plotdata(
+        builder.stock.return_product["get_chart_history"]["GOOG"],
+        plot_type="don_exist_plot",
+        folder=folder,
+    )
+    assert len(list(Path(f"{folder}").glob("*.png"))) == 0
+
+
+def test_plotdata_show() -> None:
+
+    ticker = fnc.FinanceCollector()
+    builder = fnc.DesignerFinanceCollector(["GOOG"])
+    ticker.builder = builder
+    ticker.find_chart_histogram()
+    folder = f"{test_plotdata_show.__name__}"
+    oneliner.Plot.plotdata(
+        builder.stock.return_product["get_chart_history"]["GOOG"],
+        plot_type="lineplot",
+        folder=folder,
+        show_fig=True,
+        save_fig=False,
+    )
+    assert len(list(Path(f"{folder}").glob("*.png"))) == 0

@@ -169,6 +169,6 @@ class Plot(OnlinerPlot):
         except AttributeError as exc:
             print(f"ERROR: {exc}")
         if save_fig:
-            builder.data_figure.save_all_figures(folder=folder)
+            builder.figure.save_all_figures(folder=folder)
         if show_fig:
             plt.show()
