@@ -20,6 +20,7 @@ yellowbrick = "*"
 imbalanced-learn = "*"
 xgboost = "*"
 missingno = "*"
+statsmodels = "*"
 
 [dev-packages]
 isort = "*"
