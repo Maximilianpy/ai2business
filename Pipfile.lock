@@ -1,7 +1,7 @@
 {
     "_meta": {
         "hash": {
-            "sha256": "56b38d4d28c81eed403dbc2eb662016cce5de2bb92888be3235dc28539b62302"
+            "sha256": "312b3283585a1d9d1531d40e90d7d1273a933756892f8b717183490b09b4c6ad"
         },
         "pipfile-spec": 6,
         "requires": {
@@ -22,10 +22,6 @@
                 "sha256:b3d9eb5119ff6e0a0125f6dabf2f9fae02f8acae7be70576002fac27235611c5"
             ],
             "version": "==0.11.0"
-        },
-        "ai2business": {
-            "path": ".",
-            "version": "==0.1.0"
         },
         "alabaster": {
             "hashes": [

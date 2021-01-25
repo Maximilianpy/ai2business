@@ -19,7 +19,6 @@ tpot = "*"
 yellowbrick = "*"
 imbalanced-learn = "*"
 xgboost = "*"
-ai2business = {path = "."}
 missingno = "*"
 
 [dev-packages]
