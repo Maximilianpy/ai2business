@@ -24,7 +24,6 @@ from typing import Union
 
 import matplotlib.pyplot as plt
 import pandas as pd
-from toml import load
 
 from ai2business.kpi_collector import trends_collector
 from ai2business.visualization import data_visualization
@@ -33,7 +32,7 @@ from ai2business.visualization import data_visualization
 class OnlinerSearch(ABC):
     """OnlinerSearch contains the abstract methods of the class `Search`.
 
-    Arguments:
+    Args:
         ABC (class): Helper class that provides a standard way to create an ABC using inheritance.
     """
 
@@ -65,7 +64,7 @@ class Search(OnlinerSearch):
         3. By related topics
         4. By related queries
 
-        Arguments:
+        Args:
             keyword_list (list): Keyword-list with the items to search for.
             timeframe (str, optional): Time frame, respectively, period to search for.
             Defaults to "today 5-y".

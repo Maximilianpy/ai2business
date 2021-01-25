@@ -3,7 +3,6 @@ site_url: https://ai2business.github.io/ai2business/
 site_description: Smart solutions for Business with AI.
 site_author: AI2Business & coworkers
 
-
 repo_url: https://github.com/AI2Business/ai2business
 repo_name: AI2Business
 edit_uri: edit/main/docs/src
@@ -13,26 +12,26 @@ copyright: Copyright &copy; 2020 - AI2Business
 
 docs_dir: src
 theme:
-    name: material
-    custom_dir: theme
-    icon:
-      logo: material/book-open-page-variant
-    palette:
-      scheme: dracula
-      primary: deep purple
-      accent: deep purple
-    font:
-    text: Roboto
-    code: Roboto Mono
-    favicon: assets/favicon.png
-    features:
-      - navigation.tabs
-      - navigation.sections
-      - navigation.expand
-      - search.suggest
-      - search.highlight
-    static_templates:
-      - 404.html
+  name: material
+  custom_dir: theme
+  icon:
+    logo: material/book-open-page-variant
+  palette:
+    scheme: dracula
+    primary: deep purple
+    accent: deep purple
+  font:
+  text: Roboto
+  code: Roboto Mono
+  favicon: assets/favicon.png
+  features:
+    - navigation.tabs
+    - navigation.sections
+    - navigation.expand
+    - search.suggest
+    - search.highlight
+  static_templates:
+    - 404.html
 
 markdown_extensions:
   - codehilite
@@ -115,16 +114,21 @@ extra_css:
   - assets/ai2business-extras/extra-5ee9fa49a5.css
 
 extra:
-    social:
-      - icon: fontawesome/brands/github
-        link: https://github.com/ai2business
+  social:
+    - icon: fontawesome/brands/github
+      link: https://github.com/ai2business
 
 plugins:
   - search
   - macros
   - mkdocstrings:
-        watch:
-          - ai2business
+      watch:
+        - ai2business/
+      handlers:
+        python:
+        rendering:
+          show_source: true
+          show_root_heading: true
   - git-revision-date-localized
   - minify:
       minify_html: true
@@ -148,5 +152,7 @@ nav:
           - Sample Generator: sample_generator_api.md
       - Visualization:
           - Data Visualization: data_visualization_api.md
+          - Visualization Style: visualization_style_api.md
       - Auto Machine Learning:
           - Deep Learning: deep_learning_api.md
+      - Oneliner: onliner_api.md
