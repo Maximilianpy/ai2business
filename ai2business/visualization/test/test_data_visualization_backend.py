@@ -33,7 +33,7 @@ df_nan["five"] = df_nan["one"] > 0
 df_nan = df_nan.reindex(["a", "b", "c", "d", "e", "f", "g", "h"])
 
 time.sleep(180)
-df_dict_years = one.TrendSearch.four_step_search(
+df_dict_years = one.Search.four_step_trendsearch(
     keyword_list=[
         "2018",
         "2019",
@@ -48,7 +48,7 @@ def test_visual_missing_data():
     builder = dav.DesignerDataVisualization(df_nan)
     data.builder = builder
     data.visual_missing_data()
-    result = builder.data_figure.return_product
+    result = builder.figure.return_product
     for i, key in enumerate(result.keys()):
         result[key].savefig(Path(f"./test_visual_missing_data_{key}.png"))
 
@@ -61,7 +61,7 @@ def test_list_product_parts():
     builder = dav.DesignerDataVisualization(df_nan)
     data.builder = builder
     data.visual_missing_data()
-    result = builder.data_figure.list_product_parts
+    result = builder.figure.list_product_parts
 
     assert (
         result
@@ -74,5 +74,5 @@ def test_save_all_figures():
     builder = dav.DesignerDataVisualization(df_nan)
     data.builder = builder
     data.visual_missing_data()
-    builder.data_figure.save_all_figures(folder="tmp")
+    builder.figure.save_all_figures(folder="tmp")
     assert len(list(Path("tmp").glob("*.png"))) == 4

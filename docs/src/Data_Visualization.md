@@ -17,7 +17,6 @@ variations using the same building steps.
     ```python
     >>> from ai2business.macros import oneliner as one
     >>> from ai2business.visualization import data_visualization as dav
-
     >>> df_dict_years = one.TrendSearch.four_step_search(
             keyword_list=[
                 "2017",
@@ -33,7 +32,7 @@ variations using the same building steps.
 
     # Here any kind of plot function can be called
     >>> data.lineplot()
-    >>> builder.data_figure.save_all_figures(folder=folder)
+    >>> builder.figure.save_all_figures(folder=folder)
     ```
 
     For the non time series plot the following dataframe is used:
@@ -118,7 +117,7 @@ Create a given line plot based on seaborn.
     >>> builder = dav.DesignerDataVisualization(dataframe)
     >>> data.builder = builder
     >>> data.lineplot()
-    >>> builder.data_figure.save_all_figures(folder=folder)
+    >>> builder.figure.save_all_figures(folder=folder)
     ```
     ![Placeholder](https://github.com/AI2Business/ai2business/blob/main/docs/images/plottypes/get_lineplot_d1f5c1875c5fac03668674031f8af390.png?raw=true){: loading=lazy }
 
@@ -143,7 +142,7 @@ Create a given point plot based on seaborn.
     >>> builder = dav.DesignerDataVisualization(dataframe)
     >>> data.builder = builder
     >>> data.pointplot()
-    >>> builder.data_figure.save_all_figures(folder=folder)
+    >>> builder.figure.save_all_figures(folder=folder)
     ```
     ![Placeholder](https://github.com/AI2Business/ai2business/blob/main/docs/images/appearance/get_pointplot_3216f41c8e8eb4977ab1870368daea37.png?raw=true){: loading=lazy }
 
@@ -168,7 +167,7 @@ Create a given scatter plot based on seaborn.
     >>> builder = dav.DesignerDataVisualization(dataframe)
     >>> data.builder = builder
     >>> data.scatterplot()
-    >>> builder.data_figure.save_all_figures(folder=folder)
+    >>> builder.figure.save_all_figures(folder=folder)
     ```
     ![Placeholder](https://github.com/AI2Business/ai2business/blob/main/docs/images/plottypes/get_scatterplot_b14dfb01022e343d587d4ba4b39ee56c.png?raw=true){: loading=lazy }
 
@@ -193,7 +192,7 @@ Create a given swarm plot based on seaborn.
     >>> builder = dav.DesignerDataVisualization(dataframe)
     >>> data.builder = builder
     >>> data.swarmplot()
-    >>> builder.data_figure.save_all_figures(folder=folder)
+    >>> builder.figure.save_all_figures(folder=folder)
     ```
     ![Placeholder](https://github.com/AI2Business/ai2business/blob/main/docs/images/plottypes/get_swarmplot_fa34ed63066eb6800f6e4300d3787da2.png?raw=true){: loading=lazy }
 
@@ -218,7 +217,7 @@ Create a given distribution plot based on seaborn.
     >>> builder = dav.DesignerDataVisualization(dataframe)
     >>> data.builder = builder
     >>> data.distributionplot()
-    >>> builder.data_figure.save_all_figures(folder=folder)
+    >>> builder.figure.save_all_figures(folder=folder)
     ```
     ![Placeholder](https://github.com/AI2Business/ai2business/blob/main/docs/images/plottypes/get_distributionplot_68a2aea492d392e6f1b81420cfed43ef.png?raw=true){: loading=lazy }
 
@@ -243,7 +242,7 @@ Create a given relational plot based on seaborn.
     >>> builder = dav.DesignerDataVisualization(dataframe)
     >>> data.builder = builder
     >>> data.relationalplot()
-    >>> builder.data_figure.save_all_figures(folder=folder)
+    >>> builder.figure.save_all_figures(folder=folder)
     ```
     ![Placeholder](https://github.com/AI2Business/ai2business/blob/main/docs/images/plottypes/get_relationalplot_2ca3df8a2c1238c50f00e3822f3b94f1.png?raw=true){: loading=lazy }
 
@@ -268,7 +267,7 @@ Create a given category plot based on seaborn.
     >>> builder = dav.DesignerDataVisualization(dataframe)
     >>> data.builder = builder
     >>> data.categoryplot()
-    >>> builder.data_figure.save_all_figures(folder=folder)
+    >>> builder.figure.save_all_figures(folder=folder)
     ```
     ![Placeholder](https://github.com/AI2Business/ai2business/blob/main/docs/images/plottypes/get_categoryplot_3628ede87a6e217e30435bdcd9a9ce3b.png?raw=true){: loading=lazy }
 
@@ -297,7 +296,7 @@ Args:
     >>> builder = dav.DesignerDataVisualization(dataframe)
     >>> data.builder = builder
     >>> data.boxplot(multiboxen=False)
-    >>> builder.data_figure.save_all_figures(folder=folder)
+    >>> builder.figure.save_all_figures(folder=folder)
     ```
     ![Placeholder](https://github.com/AI2Business/ai2business/blob/main/docs/images/plottypes/get_boxplot_a0023f9b0bc21741142a69f40baf5c43.png?raw=true){: loading=lazy }
     ```python
@@ -306,7 +305,7 @@ Args:
     >>> builder = dav.DesignerDataVisualization(dataframe)
     >>> data.builder = builder
     >>> data.boxplot(multiboxen=True)
-    >>> builder.data_figure.save_all_figures(folder=folder)
+    >>> builder.figure.save_all_figures(folder=folder)
     ![Placeholder](https://github.com/AI2Business/ai2business/blob/main/docs/images/plottypes/get_boxenplot_56ae2969afd82d78d7585b14e938df29.png?raw=true){: loading=lazy }
     ```
 
@@ -331,7 +330,7 @@ Create a given strip plot based on seaborn.
     >>> builder = dav.DesignerDataVisualization(dataframe)
     >>> data.builder = builder
     >>> data.stripplot()
-    >>> builder.data_figure.save_all_figures(folder=folder)
+    >>> builder.figure.save_all_figures(folder=folder)
     ```
     ![Placeholder](https://github.com/AI2Business/ai2business/blob/main/docs/images/plottypes/get_stripplot_4ce7af555a14c09c6f48ab7b13990dd7.png?raw=true){: loading=lazy }
 
@@ -356,7 +355,7 @@ Create a given hexagon plot based on seaborn.
     >>> builder = dav.DesignerDataVisualization(dataframe)
     >>> data.builder = builder
     >>> data.hexagonalplot()
-    >>> builder.data_figure.save_all_figures(folder=folder)
+    >>> builder.figure.save_all_figures(folder=folder)
     ```
     ![Placeholder](https://github.com/AI2Business/ai2business/blob/main/docs/images/plottypes/get_hexagonplot_bee62ec100c2ea9dc2bc6e71d18cf3d6.png?raw=true){: loading=lazy }
 
@@ -381,7 +380,7 @@ Create a given histogram plot based on seaborn.
     >>> builder = dav.DesignerDataVisualization(dataframe)
     >>> data.builder = builder
     >>> data.histogramplot()
-    >>> builder.data_figure.save_all_figures(folder=folder)
+    >>> builder.figure.save_all_figures(folder=folder)
     ```
     ![Placeholder](https://github.com/AI2Business/ai2business/blob/main/docs/images/appearance/get_histogramplot_ceed49b02f48ef9f57e863fbcc98f5dd.png?raw=true){: loading=lazy }
 
@@ -406,7 +405,7 @@ Create a given violin plot based on seaborn.
     >>> builder = dav.DesignerDataVisualization(dataframe)
     >>> data.builder = builder
     >>> data.violinplot()
-    >>> builder.data_figure.save_all_figures(folder=folder)
+    >>> builder.figure.save_all_figures(folder=folder)
     ```
     ![Placeholder](https://github.com/AI2Business/ai2business/blob/main/docs/images/plottypes/get_violinplot_9956ae30ad1f00a5b5869a4da95754d9.png?raw=true){: loading=lazy }
 
@@ -431,7 +430,7 @@ Create a given residual plot based on seaborn.
     >>> builder = dav.DesignerDataVisualization(dataframe)
     >>> data.builder = builder
     >>> data.residualplot()
-    >>> builder.data_figure.save_all_figures(folder=folder)
+    >>> builder.figure.save_all_figures(folder=folder)
     ```
     ![Placeholder](https://github.com/AI2Business/ai2business/blob/main/docs/images/plottypes/get_violinplot_9956ae30ad1f00a5b5869a4da95754d9.png?raw=true){: loading=lazy }
 
@@ -460,7 +459,7 @@ Args:
     >>> builder = dav.DesignerDataVisualization(dataframe)
     >>> data.builder = builder
     >>> data.regressionplot(map=False)
-    >>> builder.data_figure.save_all_figures(folder=folder)
+    >>> builder.figure.save_all_figures(folder=folder)
     ```
     ![Placeholder](https://github.com/AI2Business/ai2business/blob/main/docs/images/plottypes/get_regressionplot_a1987483cda51c9c884abd44b4def6ef.png?raw=true){: loading=lazy }
     ```python
@@ -469,7 +468,7 @@ Args:
     >>> builder = dav.DesignerDataVisualization(dataframe)
     >>> data.builder = builder
     >>> data.regressionmapplot(map=True)
-    >>> builder.data_figure.save_all_figures(folder=folder)
+    >>> builder.figure.save_all_figures(folder=folder)
     ```
     ![Placeholder](https://github.com/AI2Business/ai2business/blob/main/docs/images/plottypes/get_density_mapplot_aa27faf44d09f3cf3e1ca549bfe12d1b.png?raw=true){: loading=lazy }
 
@@ -498,7 +497,7 @@ Args:
     >>> builder = dav.DesignerDataVisualization(dataframe)
     >>> data.builder = builder
     >>> data.kerneldensitymapplot(map=False)
-    >>> builder.data_figure.save_all_figures(folder=folder)
+    >>> builder.figure.save_all_figures(folder=folder)
     ```
     ![Placeholder](https://github.com/AI2Business/ai2business/blob/main/docs/images/plottypes/get_kerneldensity_mapplot_da7caa95343a14497e78afff0fb304fb.png?raw=true){: loading=lazy }
     ```python
@@ -507,7 +506,7 @@ Args:
     >>> builder = dav.DesignerDataVisualization(dataframe)
     >>> data.builder = builder
     >>> data.densitymapplot(map=True)
-    >>> builder.data_figure.save_all_figures(folder=folder)
+    >>> builder.figure.save_all_figures(folder=folder)
     ```
     ![Placeholder](https://github.com/AI2Business/ai2business/blob/main/docs/images/plottypes/get_density_mapplot_aa27faf44d09f3cf3e1ca549bfe12d1b.png?raw=true){: loading=lazy }
 
@@ -537,7 +536,7 @@ Args:
     >>> builder = dav.DesignerDataVisualization(dataframe)
     >>> data.builder = builder
     >>> data.clustermapplot()
-    >>> builder.data_figure.save_all_figures(folder=folder)
+    >>> builder.figure.save_all_figures(folder=folder)
     ```
     ![Placeholder](https://github.com/AI2Business/ai2business/blob/main/docs/images/plottypes/get_cluster_mapplot_212509d11bc11b8d2de8e09a98760a5a.png?raw=true){: loading=lazy }
 
@@ -562,7 +561,7 @@ Create a given heat map based on seaborn.
     >>> builder = dav.DesignerDataVisualization(dataframe)
     >>> data.builder = builder
     >>> data.heatmapplot()
-    >>> builder.data_figure.save_all_figures(folder=folder)
+    >>> builder.figure.save_all_figures(folder=folder)
     ```
     ![Placeholder](https://github.com/AI2Business/ai2business/blob/main/docs/images/plottypes/get_heat_mapplot_6efd63f601845f3b57c63a82a360464d.png?raw=true){: loading=lazy }
 
@@ -593,7 +592,7 @@ Args:
     >>> builder = dav.DesignerDataVisualization(dataframe)
     >>> data.builder = builder
     >>> data.diagonalcorrelationplot(map=False)
-    >>> builder.data_figure.save_all_figures(folder=folder)
+    >>> builder.figure.save_all_figures(folder=folder)
     ```
     ![Placeholder](https://github.com/AI2Business/ai2business/blob/main/docs/images/plottypes/get_diagonal_correlationplot_edcbab55666e77860eebdc5b73d45b6d.png?raw=true){: loading=lazy }
     ```python
@@ -602,7 +601,7 @@ Args:
     >>> builder = dav.DesignerDataVisualization(dataframe)
     >>> data.builder = builder
     >>> data.correlationplot(map=True)
-    >>> builder.data_figure.save_all_figures(folder=folder)
+    >>> builder.figure.save_all_figures(folder=folder)
     ```
     ![Placeholder](https://github.com/AI2Business/ai2business/blob/main/docs/images/plottypes/get_correlationplot_227d61e793e336cf86e41ec7b6ec33d6.png?raw=true){: loading=lazy }
 
@@ -631,7 +630,7 @@ Args:
     >>> builder = dav.DesignerDataVisualization(dataframe)
     >>> data.builder = builder
     >>> data.complexpairmapplot(map=False)
-    >>> builder.data_figure.save_all_figures(folder=folder)
+    >>> builder.figure.save_all_figures(folder=folder)
     ```
     ![Placeholder](https://github.com/AI2Business/ai2business/blob/main/docs/images/plottypes/get_complex_pairmapplot_fb3ba50582340191e6f1b27328d60f7f.png?raw=true){: loading=lazy }
     ```python
@@ -640,7 +639,7 @@ Args:
     >>> builder = dav.DesignerDataVisualization(dataframe)
     >>> data.builder = builder
     >>> data.pairmapplot(map=True)
-    >>> builder.data_figure.save_all_figures(folder=folder)
+    >>> builder.figure.save_all_figures(folder=folder)
     ```
     ![Placeholder](https://github.com/AI2Business/ai2business/blob/main/docs/images/plottypes/get_pairmapplot_292a3bb10c014dc2dd57a6a12eb608d3.png?raw=true){: loading=lazy }
 
@@ -665,7 +664,7 @@ Create a given swarm plot based on seaborn.
     >>> builder = dav.DesignerDataVisualization(dataframe)
     >>> data.builder = builder
     >>> data.swarmplot()
-    >>> builder.data_figure.save_all_figures(folder=folder)
+    >>> builder.figure.save_all_figures(folder=folder)
     ```
     ![Placeholder](https://github.com/AI2Business/ai2business/blob/main/docs/images/plottypes/get_swarmplot_fa34ed63066eb6800f6e4300d3787da2.png?raw=true){: loading=lazy }
 

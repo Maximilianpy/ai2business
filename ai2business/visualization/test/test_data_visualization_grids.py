@@ -30,7 +30,7 @@ def test_lineplot_white():
     data.builder = builder
     data.lineplot()
     folder = "tmp_white"
-    builder.data_figure.save_all_figures(folder=folder)
+    builder.figure.save_all_figures(folder=folder)
     assert len(list(Path(f"{folder}").glob("*.png"))) == 1
 
 
@@ -43,7 +43,7 @@ def test_lineplot_dark():
     data.builder = builder
     data.lineplot()
     folder = "tmp_dark"
-    builder.data_figure.save_all_figures(folder=folder)
+    builder.figure.save_all_figures(folder=folder)
     assert len(list(Path(f"{folder}").glob("*.png"))) == 1
 
 
@@ -53,7 +53,7 @@ def test_lineplot_whitegrid():
     data.builder = builder
     data.lineplot()
     folder = "tmp_whitegrid"
-    builder.data_figure.save_all_figures(folder=folder)
+    builder.figure.save_all_figures(folder=folder)
     assert len(list(Path(f"{folder}").glob("*.png"))) == 1
 
 
@@ -63,5 +63,5 @@ def test_lineplot_darkgrid():
     data.builder = builder
     data.lineplot()
     folder = "tmp_darkgrid"
-    builder.data_figure.save_all_figures(folder=folder)
+    builder.figure.save_all_figures(folder=folder)
     assert len(list(Path(f"{folder}").glob("*.png"))) == 1

@@ -143,4 +143,4 @@ def test_special_char():
     )
     ticker.builder = builder
     ticker.find_chart_histogram()
-    assert type(builder.stock.return_product["get_chart_history"]) == type(dict())
+    assert type(builder.stock.list_product_parts) == str

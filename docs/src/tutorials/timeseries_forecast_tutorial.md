@@ -2,7 +2,7 @@
 
 ## Runing a small timeseries forecast
 
-Before running a time series forecast, the initial data set has to be generated first via oneliner. The online `four_step_search` combines four types of trend search:
+Before running a time series forecast, the initial data set has to be generated first via oneliner. The online `four_step_trendsearch` combines four types of trend search:
 
 1. Overtime
 2. By regions
@@ -34,7 +34,7 @@ A dependency between the years is obviously given, even if single event trigger 
 
 ```python
 keyword_list: list = ["2017", "2018", "2019", "2020"]
-timeframe = oneliner.TrendSearch.four_step_search(keyword_list=keyword_list)
+timeframe = oneliner.Search.four_step_trendsearch(keyword_list=keyword_list)
 timeframe["get_interest_over_time"].plot()
 
 ```

@@ -23,7 +23,7 @@ from ai2business.macros import oneliner as one
 from ai2business.visualization import data_visualization as dav
 
 time.sleep(180)
-df_dict_fruits = one.TrendSearch.four_step_search(
+df_dict_fruits = one.Search.four_step_trendsearch(
     keyword_list=[
         "apple",
         "pineapple",
@@ -44,7 +44,7 @@ def test_lineplot():
     data.builder = builder
     data.lineplot()
     folder = f"{test_lineplot.__name__}"
-    builder.data_figure.save_all_figures(folder=folder)
+    builder.figure.save_all_figures(folder=folder)
     assert len(list(Path(f"{folder}").glob("*.png"))) == 1
 
 
@@ -59,7 +59,7 @@ def test_pointplot():
     data.builder = builder
     data.pointplot()
     folder = f"{test_pointplot.__name__}"
-    builder.data_figure.save_all_figures(folder=folder)
+    builder.figure.save_all_figures(folder=folder)
     assert len(list(Path(f"{folder}").glob("*.png"))) == 1
 
 
@@ -75,7 +75,7 @@ def test_scatterplot():
     data.builder = builder
     data.scatterplot(size="home delivery")
     folder = f"{test_scatterplot.__name__}"
-    builder.data_figure.save_all_figures(folder=folder)
+    builder.figure.save_all_figures(folder=folder)
     assert len(list(Path(f"{folder}").glob("*.png"))) == 1
 
 
@@ -93,7 +93,7 @@ def test_swarmplot():
         alpha=0.25,
     )
     folder = f"{test_swarmplot.__name__}"
-    builder.data_figure.save_all_figures(folder=folder)
+    builder.figure.save_all_figures(folder=folder)
     assert len(list(Path(f"{folder}").glob("*.png"))) == 1
 
 
@@ -108,7 +108,7 @@ def test_distributionplot():
     data.builder = builder
     data.distributionplot(kind="ecdf")
     folder = f"{test_distributionplot.__name__}"
-    builder.data_figure.save_all_figures(folder=folder)
+    builder.figure.save_all_figures(folder=folder)
     assert len(list(Path(f"{folder}").glob("*.png"))) == 1
 
 
@@ -124,7 +124,7 @@ def test_relationalplot():
     data.builder = builder
     data.relationalplot(col="super market")
     folder = f"{test_relationalplot.__name__}"
-    builder.data_figure.save_all_figures(folder=folder)
+    builder.figure.save_all_figures(folder=folder)
     assert len(list(Path(f"{folder}").glob("*.png"))) == 1
 
 
@@ -139,7 +139,7 @@ def test_categoryplot():
     data.builder = builder
     data.categoryplot()
     folder = f"{test_categoryplot.__name__}"
-    builder.data_figure.save_all_figures(folder=folder)
+    builder.figure.save_all_figures(folder=folder)
     assert len(list(Path(f"{folder}").glob("*.png"))) == 1
 
 
@@ -151,7 +151,7 @@ def test_boxplot():
     data.builder = builder
     data.boxplot()
     folder = f"{test_boxplot.__name__}"
-    builder.data_figure.save_all_figures(folder=folder)
+    builder.figure.save_all_figures(folder=folder)
     assert len(list(Path(f"{folder}").glob("*.png"))) == 1
 
 
@@ -166,7 +166,7 @@ def test_boxenplot():
     data.builder = builder
     data.boxplot(multiboxen=True)
     folder = f"{test_boxenplot.__name__}"
-    builder.data_figure.save_all_figures(folder=folder)
+    builder.figure.save_all_figures(folder=folder)
     assert len(list(Path(f"{folder}").glob("*.png"))) == 1
 
 
@@ -178,7 +178,7 @@ def test_stripplot():
     data.builder = builder
     data.stripplot()
     folder = f"{test_stripplot.__name__}"
-    builder.data_figure.save_all_figures(folder=folder)
+    builder.figure.save_all_figures(folder=folder)
     assert len(list(Path(f"{folder}").glob("*.png"))) == 1
 
 
@@ -192,7 +192,7 @@ def test_hexagonplot():
     data.builder = builder
     data.hexagonplot(color="#4CB391")
     folder = f"{test_hexagonplot.__name__}"
-    builder.data_figure.save_all_figures(folder=folder)
+    builder.figure.save_all_figures(folder=folder)
     assert len(list(Path(f"{folder}").glob("*.png"))) == 1
 
 
@@ -204,7 +204,7 @@ def test_histogramplot():
     data.builder = builder
     data.histogramplot(multiple="stack", log_scale=True)
     folder = f"{test_histogramplot.__name__}"
-    builder.data_figure.save_all_figures(folder=folder)
+    builder.figure.save_all_figures(folder=folder)
     assert len(list(Path(f"{folder}").glob("*.png"))) == 1
 
 
@@ -216,7 +216,7 @@ def test_violinplot():
     data.builder = builder
     data.violinplot()
     folder = f"{test_violinplot.__name__}"
-    builder.data_figure.save_all_figures(folder=folder)
+    builder.figure.save_all_figures(folder=folder)
     assert len(list(Path(f"{folder}").glob("*.png"))) == 1
 
 
@@ -230,7 +230,7 @@ def test_residualplot():
     data.builder = builder
     data.residualplot(lowess=True, color="b")
     folder = f"{test_residualplot.__name__}"
-    builder.data_figure.save_all_figures(folder=folder)
+    builder.figure.save_all_figures(folder=folder)
     assert len(list(Path(f"{folder}").glob("*.png"))) == 1
 
 
@@ -244,7 +244,7 @@ def test_regressionplot():
     data.builder = builder
     data.regressionplot()
     folder = f"{test_regressionplot.__name__}"
-    builder.data_figure.save_all_figures(folder=folder)
+    builder.figure.save_all_figures(folder=folder)
     assert len(list(Path(f"{folder}").glob("*.png"))) == 1
 
 
@@ -258,7 +258,7 @@ def test_regressionmap():
     data.builder = builder
     data.regressionplot(map=True)
     folder = f"{test_regressionmap.__name__}"
-    builder.data_figure.save_all_figures(folder=folder)
+    builder.figure.save_all_figures(folder=folder)
     assert len(list(Path(f"{folder}").glob("*.png"))) == 1
 
 
@@ -272,7 +272,7 @@ def test_densitymap():
     data.builder = builder
     data.densitymap()
     folder = f"{test_densitymap.__name__}"
-    builder.data_figure.save_all_figures(folder=folder)
+    builder.figure.save_all_figures(folder=folder)
     assert len(list(Path(f"{folder}").glob("*.png"))) == 1
 
 
@@ -286,7 +286,7 @@ def test_kdemap():
     data.builder = builder
     data.densitymap(kde=True)
     folder = f"{test_kdemap.__name__}"
-    builder.data_figure.save_all_figures(folder=folder)
+    builder.figure.save_all_figures(folder=folder)
     assert len(list(Path(f"{folder}").glob("*.png"))) == 1
 
 
@@ -300,7 +300,7 @@ def test_heatmap():
     data.builder = builder
     data.heatmap()
     folder = f"{test_heatmap.__name__}"
-    builder.data_figure.save_all_figures(folder=folder)
+    builder.figure.save_all_figures(folder=folder)
     assert len(list(Path(f"{folder}").glob("*.png"))) == 1
 
 
@@ -319,7 +319,7 @@ def test_clustermap():
     data.builder = builder
     data.clustermap()
     folder = f"{test_clustermap.__name__}"
-    builder.data_figure.save_all_figures(folder=folder)
+    builder.figure.save_all_figures(folder=folder)
     assert len(list(Path(f"{folder}").glob("*.png"))) == 1
 
 
@@ -333,7 +333,7 @@ def test_correlation():
     data.builder = builder
     data.correlationmap()
     folder = f"{test_correlation.__name__}"
-    builder.data_figure.save_all_figures(folder=folder)
+    builder.figure.save_all_figures(folder=folder)
     assert len(list(Path(f"{folder}").glob("*.png"))) == 1
 
 
@@ -347,7 +347,7 @@ def test_correlation_2():
     data.builder = builder
     data.correlationmap(diagonal=True)
     folder = f"{test_correlation_2.__name__}"
-    builder.data_figure.save_all_figures(folder=folder)
+    builder.figure.save_all_figures(folder=folder)
     assert len(list(Path(f"{folder}").glob("*.png"))) == 1
 
 
@@ -361,7 +361,7 @@ def test_pairmap():
     data.builder = builder
     data.pairmap()
     folder = f"{test_pairmap.__name__}"
-    builder.data_figure.save_all_figures(folder=folder)
+    builder.figure.save_all_figures(folder=folder)
     assert len(list(Path(f"{folder}").glob("*.png"))) == 1
 
 
@@ -375,5 +375,5 @@ def test_pairmap_complex():
     data.builder = builder
     data.pairmap(complex=True)
     folder = f"{test_pairmap_complex.__name__}"
-    builder.data_figure.save_all_figures(folder=folder)
+    builder.figure.save_all_figures(folder=folder)
     assert len(list(Path(f"{folder}").glob("*.png"))) == 1
