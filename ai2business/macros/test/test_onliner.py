@@ -16,6 +16,8 @@
 
 from pathlib import Path
 
+import pytest
+
 from ai2business.kpi_collector import finance_collector as fnc
 from ai2business.macros import oneliner
 
@@ -60,7 +62,7 @@ def test_plotdata_failed() -> None:
     )
     assert len(list(Path(f"{folder}").glob("*.png"))) == 0
 
-
+@pytest.mark.mpl_image_compare
 def test_plotdata_show() -> None:
 
     ticker = fnc.FinanceCollector()

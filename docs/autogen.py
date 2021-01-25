@@ -42,6 +42,8 @@ PAGES = {
     "Oneliner.md": [
         "ai2business.macros.oneliner.Search",
         "ai2business.macros.oneliner.Search.four_step_trendsearch",
+        "ai2business.macros.oneliner.Plot",
+        "ai2business.macros.oneliner.Plot.plotdata",
     ],
 }
 
