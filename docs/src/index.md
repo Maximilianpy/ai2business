@@ -24,4 +24,4 @@ pip install git+https://github.com/AI2Business/ai2business.git
 
 ## Usage <a name = "usage"></a>
 
-Please see the [developer-docs](https://ai2business.github.io/ai2business/dev/).
+Please see the [developer-docs](https://ai2business.github.io/ai2business/).
