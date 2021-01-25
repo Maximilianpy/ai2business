@@ -13,10 +13,8 @@
 # limitations under the License.
 # ==============================================================================
 """Test-Environment for oneliner."""
-
 from pathlib import Path
-
-import pytest
+from unittest import mock
 
 from ai2business.kpi_collector import finance_collector as fnc
 from ai2business.macros import oneliner
@@ -62,8 +60,9 @@ def test_plotdata_failed() -> None:
     )
     assert len(list(Path(f"{folder}").glob("*.png"))) == 0
 
-@pytest.mark.mpl_image_compare
-def test_plotdata_show() -> None:
+
+@mock.patch("ai2business.macros.oneliner.Plot.plotdata")
+def test_plotdata_show(plotdata) -> None:
 
     ticker = fnc.FinanceCollector()
     builder = fnc.DesignerFinanceCollector(["GOOG"])
@@ -77,4 +76,4 @@ def test_plotdata_show() -> None:
         show_fig=True,
         save_fig=False,
     )
-    assert len(list(Path(f"{folder}").glob("*.png"))) == 0
+    assert oneliner.Plot.plotdata.is_called

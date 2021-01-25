@@ -19,6 +19,8 @@ tpot = "*"
 yellowbrick = "*"
 imbalanced-learn = "*"
 xgboost = "*"
+ai2business = {path = "."}
+missingno = "*"
 
 [dev-packages]
 isort = "*"
@@ -35,7 +37,6 @@ pylama = "*"
 pip = "*"
 pytest-sugar = "*"
 pytest-clarity = "*"
-pytest-mpl = "*"
 pylint = "*"
 keras-autodoc = "*"
 jupyter = "*"
