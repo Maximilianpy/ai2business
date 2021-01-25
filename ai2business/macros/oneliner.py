@@ -33,7 +33,7 @@ from ai2business.visualization import data_visualization
 class OnlinerSearch(ABC):
     """OnlinerSearch contains the abstract methods of the class `Search`.
 
-    Args:
+    Arguments:
         ABC (class): Helper class that provides a standard way to create an ABC using inheritance.
     """
 
@@ -65,7 +65,7 @@ class Search(OnlinerSearch):
         3. By related topics
         4. By related queries
 
-        Args:
+        Arguments:
             keyword_list (list): Keyword-list with the items to search for.
             timeframe (str, optional): Time frame, respectively, period to search for.
             Defaults to "today 5-y".
