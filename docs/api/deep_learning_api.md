@@ -1,4 +1,3 @@
-
 ## API of the Auto Machine Learning
 ---
 

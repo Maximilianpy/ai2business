@@ -123,12 +123,7 @@ plugins:
   - macros
   - mkdocstrings:
       watch:
-        - ai2business/
-      handlers:
-        python:
-        rendering:
-          show_source: true
-          show_root_heading: true
+        - ai2business
   - git-revision-date-localized
   - minify:
       minify_html: true
@@ -155,4 +150,4 @@ nav:
           - Visualization Style: visualization_style_api.md
       - Auto Machine Learning:
           - Deep Learning: deep_learning_api.md
-      - Oneliner: onliner_api.md
+      - Oneliner: oneliner_api.md
