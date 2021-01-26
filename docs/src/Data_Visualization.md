@@ -1,4 +1,4 @@
-<span style="float:right;">[[source]](https://github.com/ai2business/ai2business/blob/main/ai2business/visualization/data_visualization.py#L718)</span>
+<span style="float:right;">[[source]](https://github.com/ai2business/ai2business/blob/main/ai2business/visualization/data_visualization.py#L712)</span>
 
 ### DataVisualization
 
@@ -17,7 +17,8 @@ variations using the same building steps.
     ```python
     >>> from ai2business.macros import oneliner as one
     >>> from ai2business.visualization import data_visualization as dav
-    >>> df_dict_years = one.TrendSearch.four_step_search(
+
+    >>> df_dict_years = one.Search.four_step_trendsearch(
             keyword_list=[
                 "2017",
                 "2018",
@@ -38,7 +39,7 @@ variations using the same building steps.
     For the non time series plot the following dataframe is used:
     ```python
     >>> from ai2business.macros import oneliner as one
-    >>>  df_dict_fruits = one.TrendSearch.four_step_search(
+    >>>  df_dict_fruits = one.Search.four_step_trendsearch(
             keyword_list=[
                 "apple",
                 "pineapple",
@@ -57,7 +58,7 @@ variations using the same building steps.
 
 ----
 
-<span style="float:right;">[[source]](https://github.com/ai2business/ai2business/blob/main/ai2business/visualization/data_visualization.py#L792)</span>
+<span style="float:right;">[[source]](https://github.com/ai2business/ai2business/blob/main/ai2business/visualization/data_visualization.py#L786)</span>
 
 ### visual_missing_data
 
@@ -99,7 +100,7 @@ Args:
 
 ----
 
-<span style="float:right;">[[source]](https://github.com/ai2business/ai2business/blob/main/ai2business/visualization/data_visualization.py#L852)</span>
+<span style="float:right;">[[source]](https://github.com/ai2business/ai2business/blob/main/ai2business/visualization/data_visualization.py#L846)</span>
 
 ### lineplot
 
@@ -124,7 +125,7 @@ Create a given line plot based on seaborn.
 
 ----
 
-<span style="float:right;">[[source]](https://github.com/ai2business/ai2business/blob/main/ai2business/visualization/data_visualization.py#L868)</span>
+<span style="float:right;">[[source]](https://github.com/ai2business/ai2business/blob/main/ai2business/visualization/data_visualization.py#L862)</span>
 
 ### pointplot
 
@@ -144,12 +145,12 @@ Create a given point plot based on seaborn.
     >>> data.pointplot()
     >>> builder.figure.save_all_figures(folder=folder)
     ```
-    ![Placeholder](https://github.com/AI2Business/ai2business/blob/main/docs/images/appearance/get_pointplot_3216f41c8e8eb4977ab1870368daea37.png?raw=true){: loading=lazy }
+    ![Placeholder](https://github.com/AI2Business/ai2business/blob/main/docs/images/plottypes/get_pointplot_3216f41c8e8eb4977ab1870368daea37.png?raw=true){: loading=lazy }
 
 
 ----
 
-<span style="float:right;">[[source]](https://github.com/ai2business/ai2business/blob/main/ai2business/visualization/data_visualization.py#L884)</span>
+<span style="float:right;">[[source]](https://github.com/ai2business/ai2business/blob/main/ai2business/visualization/data_visualization.py#L878)</span>
 
 ### scatterplot
 
@@ -174,7 +175,7 @@ Create a given scatter plot based on seaborn.
 
 ----
 
-<span style="float:right;">[[source]](https://github.com/ai2business/ai2business/blob/main/ai2business/visualization/data_visualization.py#L900)</span>
+<span style="float:right;">[[source]](https://github.com/ai2business/ai2business/blob/main/ai2business/visualization/data_visualization.py#L894)</span>
 
 ### swarmplot
 
@@ -199,7 +200,7 @@ Create a given swarm plot based on seaborn.
 
 ----
 
-<span style="float:right;">[[source]](https://github.com/ai2business/ai2business/blob/main/ai2business/visualization/data_visualization.py#L916)</span>
+<span style="float:right;">[[source]](https://github.com/ai2business/ai2business/blob/main/ai2business/visualization/data_visualization.py#L910)</span>
 
 ### distributionplot
 
@@ -224,7 +225,7 @@ Create a given distribution plot based on seaborn.
 
 ----
 
-<span style="float:right;">[[source]](https://github.com/ai2business/ai2business/blob/main/ai2business/visualization/data_visualization.py#L931)</span>
+<span style="float:right;">[[source]](https://github.com/ai2business/ai2business/blob/main/ai2business/visualization/data_visualization.py#L925)</span>
 
 ### relationalplot
 
@@ -249,7 +250,7 @@ Create a given relational plot based on seaborn.
 
 ----
 
-<span style="float:right;">[[source]](https://github.com/ai2business/ai2business/blob/main/ai2business/visualization/data_visualization.py#L947)</span>
+<span style="float:right;">[[source]](https://github.com/ai2business/ai2business/blob/main/ai2business/visualization/data_visualization.py#L941)</span>
 
 ### categoryplot
 
@@ -274,7 +275,7 @@ Create a given category plot based on seaborn.
 
 ----
 
-<span style="float:right;">[[source]](https://github.com/ai2business/ai2business/blob/main/ai2business/visualization/data_visualization.py#L963)</span>
+<span style="float:right;">[[source]](https://github.com/ai2business/ai2business/blob/main/ai2business/visualization/data_visualization.py#L957)</span>
 
 ### boxplot
 
@@ -312,7 +313,7 @@ Args:
 
 ----
 
-<span style="float:right;">[[source]](https://github.com/ai2business/ai2business/blob/main/ai2business/visualization/data_visualization.py#L995)</span>
+<span style="float:right;">[[source]](https://github.com/ai2business/ai2business/blob/main/ai2business/visualization/data_visualization.py#L989)</span>
 
 ### stripplot
 
@@ -337,7 +338,7 @@ Create a given strip plot based on seaborn.
 
 ----
 
-<span style="float:right;">[[source]](https://github.com/ai2business/ai2business/blob/main/ai2business/visualization/data_visualization.py#L1011)</span>
+<span style="float:right;">[[source]](https://github.com/ai2business/ai2business/blob/main/ai2business/visualization/data_visualization.py#L1005)</span>
 
 ### hexagonplot
 
@@ -362,7 +363,7 @@ Create a given hexagon plot based on seaborn.
 
 ----
 
-<span style="float:right;">[[source]](https://github.com/ai2business/ai2business/blob/main/ai2business/visualization/data_visualization.py#L1027)</span>
+<span style="float:right;">[[source]](https://github.com/ai2business/ai2business/blob/main/ai2business/visualization/data_visualization.py#L1021)</span>
 
 ### histogramplot
 
@@ -382,12 +383,12 @@ Create a given histogram plot based on seaborn.
     >>> data.histogramplot()
     >>> builder.figure.save_all_figures(folder=folder)
     ```
-    ![Placeholder](https://github.com/AI2Business/ai2business/blob/main/docs/images/appearance/get_histogramplot_ceed49b02f48ef9f57e863fbcc98f5dd.png?raw=true){: loading=lazy }
+    ![Placeholder](https://github.com/AI2Business/ai2business/blob/main/docs/images/plottypes/get_histogramplot_ceed49b02f48ef9f57e863fbcc98f5dd.png?raw=true){: loading=lazy }
 
 
 ----
 
-<span style="float:right;">[[source]](https://github.com/ai2business/ai2business/blob/main/ai2business/visualization/data_visualization.py#L1043)</span>
+<span style="float:right;">[[source]](https://github.com/ai2business/ai2business/blob/main/ai2business/visualization/data_visualization.py#L1037)</span>
 
 ### violinplot
 
@@ -412,7 +413,7 @@ Create a given violin plot based on seaborn.
 
 ----
 
-<span style="float:right;">[[source]](https://github.com/ai2business/ai2business/blob/main/ai2business/visualization/data_visualization.py#L1059)</span>
+<span style="float:right;">[[source]](https://github.com/ai2business/ai2business/blob/main/ai2business/visualization/data_visualization.py#L1053)</span>
 
 ### residualplot
 
@@ -437,7 +438,7 @@ Create a given residual plot based on seaborn.
 
 ----
 
-<span style="float:right;">[[source]](https://github.com/ai2business/ai2business/blob/main/ai2business/visualization/data_visualization.py#L1075)</span>
+<span style="float:right;">[[source]](https://github.com/ai2business/ai2business/blob/main/ai2business/visualization/data_visualization.py#L1069)</span>
 
 ### regressionplot
 
@@ -470,12 +471,12 @@ Args:
     >>> data.regressionmapplot(map=True)
     >>> builder.figure.save_all_figures(folder=folder)
     ```
-    ![Placeholder](https://github.com/AI2Business/ai2business/blob/main/docs/images/plottypes/get_density_mapplot_aa27faf44d09f3cf3e1ca549bfe12d1b.png?raw=true){: loading=lazy }
+    ![Placeholder](https://github.com/AI2Business/ai2business/blob/main/docs/images/plottypes/get_regression_mapplot_eefda6165b46c96402cd5e2b48bce5b2.png?raw=true){: loading=lazy }
 
 
 ----
 
-<span style="float:right;">[[source]](https://github.com/ai2business/ai2business/blob/main/ai2business/visualization/data_visualization.py#L1108)</span>
+<span style="float:right;">[[source]](https://github.com/ai2business/ai2business/blob/main/ai2business/visualization/data_visualization.py#L1102)</span>
 
 ### densitymap
 
@@ -513,7 +514,7 @@ Args:
 
 ----
 
-<span style="float:right;">[[source]](https://github.com/ai2business/ai2business/blob/main/ai2business/visualization/data_visualization.py#L1141)</span>
+<span style="float:right;">[[source]](https://github.com/ai2business/ai2business/blob/main/ai2business/visualization/data_visualization.py#L1135)</span>
 
 ### clustermap
 
@@ -543,7 +544,7 @@ Args:
 
 ----
 
-<span style="float:right;">[[source]](https://github.com/ai2business/ai2business/blob/main/ai2business/visualization/data_visualization.py#L1166)</span>
+<span style="float:right;">[[source]](https://github.com/ai2business/ai2business/blob/main/ai2business/visualization/data_visualization.py#L1160)</span>
 
 ### heatmap
 
@@ -568,7 +569,7 @@ Create a given heat map based on seaborn.
 
 ----
 
-<span style="float:right;">[[source]](https://github.com/ai2business/ai2business/blob/main/ai2business/visualization/data_visualization.py#L1182)</span>
+<span style="float:right;">[[source]](https://github.com/ai2business/ai2business/blob/main/ai2business/visualization/data_visualization.py#L1176)</span>
 
 ### correlationmap
 
@@ -608,7 +609,7 @@ Args:
 
 ----
 
-<span style="float:right;">[[source]](https://github.com/ai2business/ai2business/blob/main/ai2business/visualization/data_visualization.py#L1226)</span>
+<span style="float:right;">[[source]](https://github.com/ai2business/ai2business/blob/main/ai2business/visualization/data_visualization.py#L1220)</span>
 
 ### pairmap
 
@@ -632,7 +633,7 @@ Args:
     >>> data.complexpairmapplot(map=False)
     >>> builder.figure.save_all_figures(folder=folder)
     ```
-    ![Placeholder](https://github.com/AI2Business/ai2business/blob/main/docs/images/plottypes/get_complex_pairmapplot_fb3ba50582340191e6f1b27328d60f7f.png?raw=true){: loading=lazy }
+    ![Placeholder](https://github.com/AI2Business/ai2business/blob/main/docs/images/plottypes/get_pairmapplot_449e8c4a5b200903fe32432ec6f440b7.png?raw=true){: loading=lazy }
     ```python
     >>> from ai2business.visualization import data_visualization as dav
     >>> data = dav.DataVisualization()
@@ -641,12 +642,12 @@ Args:
     >>> data.pairmapplot(map=True)
     >>> builder.figure.save_all_figures(folder=folder)
     ```
-    ![Placeholder](https://github.com/AI2Business/ai2business/blob/main/docs/images/plottypes/get_pairmapplot_292a3bb10c014dc2dd57a6a12eb608d3.png?raw=true){: loading=lazy }
+    ![Placeholder](https://github.com/AI2Business/ai2business/blob/main/docs/images/plottypes/get_complex_pairmapplot_fb3ba50582340191e6f1b27328d60f7f.png?raw=true){: loading=lazy }
 
 
 ----
 
-<span style="float:right;">[[source]](https://github.com/ai2business/ai2business/blob/main/ai2business/visualization/data_visualization.py#L900)</span>
+<span style="float:right;">[[source]](https://github.com/ai2business/ai2business/blob/main/ai2business/visualization/data_visualization.py#L894)</span>
 
 ### swarmplot
 

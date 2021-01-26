@@ -16,7 +16,7 @@ variations using the same building steps.
 
 ----
 
-<span style="float:right;">[[source]](https://github.com/ai2business/ai2business/blob/main/ai2business/kpi_collector/finance_collector.py#L386)</span>
+<span style="float:right;">[[source]](https://github.com/ai2business/ai2business/blob/main/ai2business/kpi_collector/finance_collector.py#L402)</span>
 
 ### FinanceCollector
 
